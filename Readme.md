@@ -11,6 +11,20 @@ Votre client ‘Electro Maroc’ est un distributeur de tout type de produit él
 ![Eelectro Flow chart](https://user-images.githubusercontent.com/86893073/208178816-caf7cb45-954f-44c6-ba0c-6cc7ca55fa83.svg)
 
 
+Install requirements:
+
+```bash
+> composer install
+```
+run the project
+
+```bash
+> PHP -S localhost:8000 -t public
+```
+**-t meaning the public folder is the root folder**
+
+
+
 ## Conception
 
 Diagramme de Cas d'utilisations et  Diagramme de de Classes.
