@@ -1,7 +1,6 @@
 <?php
 
 use Core\App;
-use Core\functions;
 use Model\notes;
 
 session_start();
@@ -9,16 +8,21 @@ const BASE_PATH = __DIR__.'/../';
 require_once BASE_PATH.'vendor/autoload.php';
 require BASE_PATH.'functions.php';
 
+// Load environment variables from .env file in root directory
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(BASE_PATH);
+$dotenv->safeload();
 
+// Load database configuration from config.php file
 $config = require BASE_PATH.'config.php';
-
+//get the instance of the app
 $App = App::getInstance();
+//set the database configuration
 $App->setDatabase( dbConfig:   $config['database']);
 
 
 
 
-
+//some test code to test the database connection and the model class
 $notes = new notes();
 // functions::dd(  $notes->findAll() );
 
@@ -48,7 +52,7 @@ $notes = new notes();
 // dd("");
 
 
-
+//set the routes
 $App->setRoutes([
     '/' => 'Controller/index.php',
     '/about' => 'Controller/about.php',
@@ -59,4 +63,5 @@ $App->setRoutes([
 ],BASE_PATH);
 
 
+//run the app
 $App->run();
