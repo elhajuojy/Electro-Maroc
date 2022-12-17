@@ -2,6 +2,8 @@
 
 use Core\App;
 use Model\notes;
+use Model\Client;
+
 
 session_start();
 const BASE_PATH = __DIR__.'/../';
@@ -21,12 +23,9 @@ $App->setDatabase( dbConfig:   $config['database']);
 
 
 
-
 //some test code to test the database connection and the model class
 $notes = new notes();
 // functions::dd(  $notes->findAll() );
-
-
 // $note->insert([
 //     'body' => 'hello',
 //     'user_id' => 1
@@ -50,6 +49,12 @@ $notes = new notes();
 //echo $verify;
 
 // dd("");
+
+
+$client = new Client();
+
+//$client->add('mohamed','11@gmail.com','123456','mohamed ali',123456,'cairo 1123 event',city: 'cairo');
+
 
 
 //set the routes
