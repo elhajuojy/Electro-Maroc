@@ -2,11 +2,10 @@
 
 return [
     'database' => [
-        'host' => 'localhost',
-        'port' => 3306,
-        'dbname' => 'myapp',
-        'charset' => 'utf8mb4'
+        'host' => $_ENV['DB_HOST'],
+        'port' =>  $_ENV['DB_PORT'],
+        'dbname' =>$_ENV['DB_NAME'],
+        'charset' => $_ENV['DB_CHARSET'],
     ],
-
     //
 ];
