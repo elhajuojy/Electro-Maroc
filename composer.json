@@ -2,8 +2,9 @@
     "name": "elhaj/electro_maroc",
     "autoload": {
         "psr-4": {
-            "Elhaj\\electro_maroc\\": "public/",
+            "Elhaj\\electro_maroc\\": "./",
             "Core\\": "Core/",
+            "Controller\\": "Controller/",
             "Model\\": "Model/"
         }
     },
