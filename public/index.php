@@ -7,6 +7,7 @@ use Model\notes;
 session_start();
 const BASE_PATH = __DIR__.'/../';
 require_once BASE_PATH.'vendor/autoload.php';
+require BASE_PATH.'functions.php';
 
 
 $config = require BASE_PATH.'config.php';
@@ -15,11 +16,11 @@ $App = App::getInstance();
 $App->setDatabase( dbConfig:   $config['database']);
 
 
+
+
+
 $notes = new notes();
-
-
-
-functions::dd(  $notes->findAll() );
+// functions::dd(  $notes->findAll() );
 
 
 // $note->insert([
@@ -37,14 +38,24 @@ functions::dd(  $notes->findAll() );
 // ]);
 
 
+//$password = hashPassword('123456');
+//$verify = verifyPassword('123456',$password);
+
+//echo $password;
+//echo "<br>";
+//echo $verify;
+
+// dd("");
+
+
 
 $App->setRoutes([
-    '/' => 'controllers/index.php',
-    '/about' => 'controllers/about.php',
-    '/notes' => 'controllers/notes/index.php',
-    '/note' => 'controllers/notes/show.php',
-    '/notes/create' => 'controllers/notes/create.php',
-    '/contact' => 'controllers/contact.php',
+    '/' => 'Controller/index.php',
+    '/about' => 'Controller/about.php',
+    '/notes' => 'Controller/notes/index.php',
+    '/note' => 'Controller/notes/show.php',
+    '/notes/create' => 'Controller/notes/create.php',
+    '/contact' => 'Controller/contact.php',
 ],BASE_PATH);
 
 
