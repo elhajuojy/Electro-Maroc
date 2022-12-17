@@ -6,6 +6,7 @@
             "Core\\": "Core/",
             "Controller\\": "Controller/",
             "Model\\": "Model/"
+
         }
     },
     "authors": [
@@ -14,5 +15,7 @@
             "email": "86893073+elhajuojy@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
