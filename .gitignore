@@ -1,3 +1,8 @@
 /vander
-
 /vendor/
+/composer.lock
+/.idea
+/.gitignore
+/.gitattributes
+/.git
+/.env
