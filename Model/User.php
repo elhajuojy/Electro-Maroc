@@ -17,7 +17,20 @@ Abstract class User extends  Model
         parent::__construct($classname);
     }
 
+    public function login(string $username, string $password): bool
+    {
+        $user = $this->findByUsername($username);
+        if ($user) {
+            hashPassword($password);
+            if (password_verify($password, $user->password)) {
+                $_SESSION['user'] = $user;
+                return true;
+            }
+        }
+        return false;
+    }
 
+    
     public function logOut():void{
         session_start();
         session_unset();
