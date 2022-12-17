@@ -6,3 +6,6 @@
 /.gitattributes
 /.git
 /.env
+/node_modules
+/.hintrc
+/package-lock.json
