@@ -1,0 +1,17 @@
+{
+    "name": "elhaj/electro_maroc",
+    "autoload": {
+        "psr-4": {
+            "Elhaj\\electro_maroc\\": "public/",
+            "Core\\": "Core/",
+            "Model\\": "Model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ELMAHDI ELHJUOJY",
+            "email": "86893073+elhajuojy@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
