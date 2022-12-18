@@ -29,9 +29,9 @@
         <a href="/cart" class="cart">
             <i class="fa-solid fa-cart-shopping"></i>
         </a>
-        <a href="/profile">
+        <?php echo  isset($_SESSION['client'])? '<a href="/profile">
             <img src="/assets/images/Profile-img.png" alt="profile">
-        </a>
+        </a>':''?>
     </div>
 </nav>
 </div>

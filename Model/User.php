@@ -31,7 +31,6 @@ Abstract class User extends  Model
     }
     
     public function logOut():void{
-        session_start();
         session_unset();
         session_destroy();
 
