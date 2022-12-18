@@ -13,5 +13,4 @@
     <div class="blog-date text-center">
         <p class="text-color-2">12/12/2021</p>
     </div>
-
 </div>
