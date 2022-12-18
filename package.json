@@ -9,8 +9,5 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
-  },
-  "publishConfig": {
-    "@elhajuojy:registry": "https://npm.pkg.github.com"
   }
 }
