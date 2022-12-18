@@ -5,10 +5,12 @@ use Model\notes;
 use Model\Client;
 
 
+
 session_start();
 const BASE_PATH = __DIR__.'/../';
 require_once BASE_PATH.'vendor/autoload.php';
 require BASE_PATH.'functions.php';
+require BASE_PATH.'Helper/constants/colors.php';
 
 // Load environment variables from .env file in root directory
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(BASE_PATH);
