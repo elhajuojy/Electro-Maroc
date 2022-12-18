@@ -21,11 +21,12 @@ abstract class  Model {
     }
 
     public function findAll(){
+
         return $this->db->query("SELECT * FROM ".$this->table)->find($this->classname);
     }
 
     public function findById(int $id){
-            // return $this->db->query("SELECT * FROM ".$this->table." WHERE id = :id",['id'=>$id])->findOne($this->classname);
+             return $this->db->query("SELECT * FROM ".$this->table." WHERE id = :id",['id'=>$id])->findOne($this->classname);
     }
 
     public function removeById(int $id): Database
@@ -64,6 +65,7 @@ abstract class  Model {
     }
     public function update(int $id, array $data): Database
     {
+
         $sql = "UPDATE ".$this->table." SET ";
         $i = 0;
         foreach ($data as $key => $value) {
@@ -77,6 +79,10 @@ abstract class  Model {
             $params[":".$key] = $value; 
         }
         return $this->db->query($sql,$params);
+    }
+
+    public function findByUsername(string $username){
+        return $this->db->query("SELECT * FROM ".$this->table." WHERE username = :username",['username'=>$username])->findOne($this->classname);
     }
 
     public function toJson(): false|string

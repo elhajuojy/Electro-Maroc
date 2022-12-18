@@ -29,7 +29,6 @@ Abstract class User extends  Model
         }
         return false;
     }
-
     
     public function logOut():void{
         session_start();

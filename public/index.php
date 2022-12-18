@@ -22,35 +22,6 @@ $App = App::getInstance();
 $App->setDatabase( dbConfig:   $config['database']);
 
 
-
-//some test code to test the database connection and the model class
-$notes = new notes();
-// functions::dd(  $notes->findAll() );
-// $note->insert([
-//     'body' => 'hello',
-//     'user_id' => 1
-
-// ]);
-
-// $notes->removeById(8);
-// $notes->removeById(9);
-
-// $notes->update(4,[
-//     'body' => 'working on it ... thank you',
-//     'user_id' => 1
-// ]);
-
-
-//$password = hashPassword('123456');
-//$verify = verifyPassword('123456',$password);
-
-//echo $password;
-//echo "<br>";
-//echo $verify;
-
-// dd("");
-
-
 $client = new Client();
 
 //$client->add('mohamed','11@gmail.com','123456','mohamed ali',123456,'cairo 1123 event',city: 'cairo');
