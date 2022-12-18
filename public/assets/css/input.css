@@ -4,3 +4,32 @@
 
 
 /* Path: public\assets\output.css */
+
+@layer base{
+    body{
+        /* font-family: 'Poppins', sans-serif; */
+    }
+    
+}
+
+
+
+@layer components {
+    .btn-rounded {
+      @apply rounded-full  border-blue-600 border-solid border-2 px-2 py-1 text-blue-600  font-semibold hover:border-blue-500 hover:text-blue-500 transition-all;
+    }
+}
+
+.rate-color{
+    color: #f8e71c;
+}
+
+.circle{
+    border-radius: 50%;
+    padding: 2px;
+    background-color: green;
+}
+
+.custom-build{
+  background-image: url("../images/home/CustomBuild-bg.png");
+}

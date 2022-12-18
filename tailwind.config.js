@@ -13,11 +13,14 @@ module.exports = {
         'color-7' : "#000000",
         'color-8' : "#C94D3F",
         'color-9' : "#78A962",
-        'color-10' : "#666666",
+          'color-10' : "#666666",
   
       },
       fontFamily: {
-        'poppins': ['"Poppins"', 'sans-serif'],
+        // 'poppins': ['"Poppins"', 'sans-serif'],
+      },
+      borderRadius:  {
+        'small': '0.25rem',
       }
     },
 
