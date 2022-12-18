@@ -31,6 +31,12 @@ run the project
 ```
 **-t meaning the public folder is the root folder**
 
+## Website preview
+<div style="display:felx; ;width:100%;margi:auto;">
+<img  src="https://user-images.githubusercontent.com/86893073/208320384-5ed68943-f84f-4afc-8528-883dac26c6c4.png" width="70%" /> 
+<img  src="https://user-images.githubusercontent.com/86893073/208320390-aeb89ebb-6c63-4d8d-b59f-46c673916b56.png" width="27%" /> 
+</div>
+
 
 
 ## Conception
