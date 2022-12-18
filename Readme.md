@@ -16,6 +16,14 @@ Install requirements:
 ```bash
 > composer install
 ```
+```bash
+> npm install
+```
+```bash
+> npm run tw:build
+```
+
+
 run the project
 
 ```bash
