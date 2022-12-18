@@ -55,6 +55,13 @@ function verifyPassword($value, $hash): bool
 }
 
 
+function Widget($name, $data = [])
+{
+    extract($data);
+    require base_path("views/components/{$name}.php");
+}
+
+
 function imageUpload($imageRequest, $imagePath = "assets/images/"): string
 {
     global $msgError;
