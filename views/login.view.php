@@ -14,7 +14,9 @@
         <div class="Registered-Customers-card grid gap-4 ">
             <div class="grid md:grid-cols-2 gap-4 container  justify-around justify-self-stretch">
                 <div class="w-full  ">
-                    <?= Widget("LoginForm") ?>
+                    <?= Widget("LoginForm",[
+                        'errors' => $errors,
+                    ]) ?>
                 </div>
                 <div class="new-Customer-card bg-color-1 p-6">
                     <h3 class="text-xl font-bold opacity-70">New Customers ?</h3>
