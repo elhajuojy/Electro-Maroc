@@ -13,7 +13,7 @@
     <div class="login-forms container">
         <div class="Registered-Customers-card grid gap-4 ">
             <div class="grid md:grid-cols-2 gap-4 container  justify-around justify-self-stretch">
-                <div class="w-full  ">
+                <div class="w-full">
                     <?= Widget("LoginForm",[
                         'errors' => $errors,
                     ]) ?>
