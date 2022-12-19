@@ -4,17 +4,16 @@ namespace Model;
 
 use Core\Model;
 
-Abstract class User extends  Model
+class Users extends  Model
 {
     public int $id;
     public  string $username;
     public  string $email;
     public  string $password;
-
-
-    public function __construct(string $classname)
+    public  string $role;
+    public function __construct()
     {
-        parent::__construct($classname);
+        parent::__construct(get_class($this));
     }
 
     public function login(string $username, string $password): bool

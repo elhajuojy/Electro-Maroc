@@ -24,7 +24,7 @@ $App = App::getInstance();
 $App->setDatabase( dbConfig:   $config['database']);
 
 
-$client = new Client();
+// $client = new Client();
 // $client->logOut();
 // echo $_SESSION['client'];
 
@@ -37,6 +37,8 @@ $App->setRoutes([
     '/' => 'Controller/index.php',
     '/login' => 'Controller/login.php',
     '/logout' => 'Controller/logout.php',
+    '/register' => 'Controller/register.php',
+    '/admin' => 'Controller/admin/dashboard.php',
 ],BASE_PATH);
 
 

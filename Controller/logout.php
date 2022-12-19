@@ -2,11 +2,10 @@
 
 use Core\functions;
 use Model\Client;
+use Model\Users;
 
-
-
-$client = new Client();
-$client->logOut();
+$user = new Users();
+$user->logOut();
 
 
 functions::goToPage('/');

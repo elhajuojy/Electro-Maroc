@@ -6,7 +6,7 @@
     <meta name="description" content="<?=$description?>" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/icon" href="assets/images/favicon/Logo.ico"/>
-    <title><?=$title?> </title>
+    <title><?=$title ?> </title>
     <link rel="stylesheet" href="assets/dist/output.css">
     <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/css/all.min.css">

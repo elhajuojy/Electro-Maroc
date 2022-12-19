@@ -29,7 +29,7 @@
                         <li>Save items to your wish list</li>
                     </ul>
                     <button class="bg-blue-500 my-8 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline" type="button">
-                        Create an Account
+                        <a href="/register">Create an Account</a>
                     </button>
                 </div>
             </div>

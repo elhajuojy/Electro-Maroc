@@ -34,6 +34,7 @@ abstract class  Model {
         return $this->db->query("DELETE FROM ".$this->table." WHERE id = :id",['id'=>$id]);
     }
 
+    
 
     public function insert(array $data): Database
     {
@@ -63,6 +64,7 @@ abstract class  Model {
         }
         return $this->db->query($sql,$params);
     }
+
     public function update(int $id, array $data): Database
     {
 
@@ -85,9 +87,12 @@ abstract class  Model {
         return $this->db->query("SELECT * FROM ".$this->table." WHERE username = :username",['username'=>$username])->findOne($this->classname);
     }
 
-    public function toJson(): false|string
+
+    public function findByEmail(string $email)
     {
-        return json_encode($this);
+        $sql = "SELECT * FROM ".$this->table." WHERE email = :email";
+        $params = ["email"=>$email];
+        return $this->db->query($sql,$params)->findOne($this->classname);
     }
 
 }

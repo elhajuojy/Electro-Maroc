@@ -748,6 +748,10 @@ body{
   margin-left: 10%;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -878,6 +882,14 @@ body{
 
 .max-w-\[234px\] {
   max-width: 234px;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .flex-shrink {
@@ -2283,6 +2295,10 @@ body{
   opacity: 0.6;
 }
 
+.opacity-75 {
+  opacity: 0.75;
+}
+
 .bg-blend-normal {
   background-blend-mode: normal;
 }
@@ -2543,6 +2559,10 @@ body{
   transition-duration: 150ms;
 }
 
+.duration-100 {
+  transition-duration: 100ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -2678,6 +2698,10 @@ body{
   .md\:mx-11 {
     margin-left: 2.75rem;
     margin-right: 2.75rem;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 
   .md\:grid-cols-2 {

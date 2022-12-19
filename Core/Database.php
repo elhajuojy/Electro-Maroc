@@ -28,6 +28,7 @@ class Database
     {
         $this->statement = $this->connection->prepare($query);
         // func::dd($params);
+        // dd($this->statement);
         $this->statement->execute($params);
         return $this;
     }
