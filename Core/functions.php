@@ -24,8 +24,9 @@ class functions
 
 
 
-    public static function goTo(string $location, $code = 200,$args = [])
+    public static function goToPage(string $location, $code = 200,$args = [])
     {
+        http_response_code($code);
         extract($args);
         header("location: " . $location);
         exit();
@@ -33,7 +34,7 @@ class functions
     public static function islogedIn($value): void
     {
         if (!isset($_SESSION[$value])) {
-            self::goTo("/");
+            self::goToPage("/");
         }
     }
 
@@ -45,7 +46,7 @@ class functions
         session_start();
         session_unset();
         session_destroy();
-        self::goTo("/");
+        self::goToPage("/");
     }
 
 

@@ -1,4 +1,5 @@
 <?php
 
 
-view('home.view.php', ['name' => 'Mehdi']);
+
+view('home.view.php', ['name' => 'Mehdi',]);

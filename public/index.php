@@ -36,6 +36,7 @@ $client = new Client();
 $App->setRoutes([
     '/' => 'Controller/index.php',
     '/login' => 'Controller/login.php',
+    '/logout' => 'Controller/logout.php',
 ],BASE_PATH);
 
 
