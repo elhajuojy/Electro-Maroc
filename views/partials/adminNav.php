@@ -13,6 +13,7 @@
             </a>
             <a href="admin-products" class="flex gap-4 items-center 
             <?php echo (urlIs('/admin-products'))?' border p-2 rounded border-gray-300':'' ?>
+            <?php echo (urlIs('/admin-createProduct'))?' border p-2 rounded border-gray-300':'' ?>
              hover:text-gray-300">
                 <img src="assets/images/icons/products.svg" alt="">
                 <p>Products</p>
@@ -44,5 +45,4 @@
                 <p>Logout</p>
             </a>
         </div>
-
     </nav>
