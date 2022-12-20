@@ -18,6 +18,7 @@ class Router{
             require $this->basepath. $this->routes[$uri];
         }else{
             
+            // dd($this->routes);
             $this->abort();
         }
     }

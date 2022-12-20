@@ -37,6 +37,16 @@ $App->setRoutes([
     '/logout' => 'Controller/logout.php',
     '/register' => 'Controller/register.php',
     '/admin' => 'Controller/Admin/dashboard.php',
+    '/cart' => 'Controller/Client/cart.php',
+    '/admin-products' => 'Controller/Admin/products.php',
+    // '/checkout' => 'Controller/checkout.php',
+    // '/contact' => 'Controller/contact.php',
+    // '/product' => 'Controller/product.php',
+    // '/products' => 'Controller/products.php',
+    // '/profile' => 'Controller/profile.php',
+    // '/search' => 'Controller/search.php',
+    // '/shop' => 'Controller/shop.php',
+    // '/wishlist' => 'Controller/wishlist.php',
 ],BASE_PATH);
 
 

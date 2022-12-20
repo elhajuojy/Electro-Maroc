@@ -9,45 +9,7 @@
 
 
 <main class="containre  m-auto flex scrollbar-hide overflow-hidden bg-gray-50">
-    <nav class="h-screen fixed  hidden lg:block w-60 shadow-lg min-w-min bg-slate-800 text-color-1">
-        <div class="logo flex p-6 gap-4 justify-center items-center place-content-center">
-            <img src="assets/images/Logo.svg" alt="">
-            <p>Electro Matoc</p>
-        </div>
-        <div class="w-[80%] h-[2px] m-auto rounded bg-gray-600"></div>
-        <div class="links flex flex-col gap-4 p-6">
-            <a href="#" class="flex gap-4 items-center border p-2 rounded border-gray-300 hover:text-gray-300">
-                <img src="assets/images/icons/dashboard.png" alt="">
-                <p>Dashboard</p>
-            </a>
-            <a href="#" class="flex gap-4 items-center  hover:text-gray-300">
-                <img src="assets/images/icons/products.svg" alt="">
-                <p>Products</p>
-            </a>
-            <a href="#" class="flex gap-4 items-center  hover:text-gray-300">
-                <img src="assets/images/icons/orders.svg" alt="">
-                <p>Orders</p>
-            </a>
-            <a href="#" class="flex gap-4 items-center  hover:text-gray-300">
-                <img src="assets/images/icons/users.svg" alt="">
-                <p>Users</p>
-            </a>
-            <a href="#" class="flex gap-4 items-center">
-                <img src="assets/images/icons/settings.svg" alt="">
-                <p>Settings</p>
-            </a>
-        </div>
-        <div class="divider m-auto h-64">
-
-        </div>
-        <div class="logout grid items-center h-fit">
-            <a href="/logout" class="flex gap-5 items-center text-white px-6  hover:text-gray-300">
-                <img src="assets/images/icons/logout.svg" alt="">
-                <p>Logout</p>
-            </a>
-        </div>
-
-    </nav>
+    <?= view('partials/adminNav.php') ?>
     <section class="w-[83%] ml-auto">
         <header class="w-full bg-white p-4 flex justify-between container items-center  flex-grow-1 ">
             <h3 class="text-2xl font-medium opacity-90 font-sans  ">Store overview</h3>
