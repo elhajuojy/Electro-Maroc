@@ -43,6 +43,9 @@ run the project
 
 ![productAdminDashboard](https://user-images.githubusercontent.com/86893073/208750616-2645a531-edf4-475e-9e07-b98b6822e7d9.png)
 
+![create product](https://user-images.githubusercontent.com/86893073/208781086-8c9c45cb-ef4f-48f3-9347-3f13525238d3.png)
+
+
 
 ## Database Design 
 
