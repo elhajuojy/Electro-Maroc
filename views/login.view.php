@@ -37,4 +37,8 @@
     </div>
 </section>
 
-<?php view('partials/footer.php'); ?>
+<?php view('partials/footer.php', [
+    'scripts' => '
+    <script src="assets/js/toggle.js"></script>
+    ',
+]); ?>

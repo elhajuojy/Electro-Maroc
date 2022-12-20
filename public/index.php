@@ -30,15 +30,13 @@ $App->setDatabase( dbConfig:   $config['database']);
 
 //$client->add('mohamed','11@gmail.com','123456','mohamed ali',123456,'cairo 1123 event',city: 'cairo');
 
-
-
 //set the routes
 $App->setRoutes([
     '/' => 'Controller/index.php',
     '/login' => 'Controller/login.php',
     '/logout' => 'Controller/logout.php',
     '/register' => 'Controller/register.php',
-    '/admin' => 'Controller/admin/dashboard.php',
+    '/admin' => 'Controller/Admin/dashboard.php',
 ],BASE_PATH);
 
 
