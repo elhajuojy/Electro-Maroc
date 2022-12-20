@@ -39,6 +39,7 @@ $App->setRoutes([
     '/admin' => 'Controller/Admin/dashboard.php',
     '/cart' => 'Controller/Client/cart.php',
     '/admin-products' => 'Controller/Admin/products.php',
+    '/admin-createProduct' => 'Controller/Admin/createProduct.php',
     // '/checkout' => 'Controller/checkout.php',
     // '/contact' => 'Controller/contact.php',
     // '/product' => 'Controller/product.php',
