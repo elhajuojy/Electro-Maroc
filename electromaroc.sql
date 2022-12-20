@@ -87,6 +87,14 @@ CREATE Table Produit (
     PRIMARY KEY (idProduit)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE images (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    image_path varchar(255) NOT NULL,
+    idProduit int(11) NOT NULL,
+    Foreign Key (idProduit) REFERENCES Produit(idProduit),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 INSERT into produit (nom, code_barre, REFERENCE, prix_achat, prix_final, prix_offer, quantite, description, image)
 VALUES 
 ('produit 1', '123456789', '123456789', 100, 200, 150, 10, 'description produit 1', 'assets/products/image1.jpg'),
