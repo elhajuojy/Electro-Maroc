@@ -39,7 +39,7 @@ run the project
 
 ## Admin Dashboard UI 
 
-![admin dashboard](https://user-images.githubusercontent.com/86893073/208654699-34a8dbe3-e412-4269-a8dd-9baef52c3add.png)
+![dashbooard](https://user-images.githubusercontent.com/86893073/208782984-c6545d15-c90d-4b4b-ab93-fe784f482e1f.png)
 
 ![productAdminDashboard](https://user-images.githubusercontent.com/86893073/208750616-2645a531-edf4-475e-9e07-b98b6822e7d9.png)
 
@@ -49,7 +49,7 @@ run the project
 
 ## Database Design 
 
-![database](https://user-images.githubusercontent.com/86893073/208714998-b23e18e4-49b0-401c-9f5f-07b7079754e5.png)
+![database v2](https://user-images.githubusercontent.com/86893073/208783004-6ef0ab6e-a7cf-462b-8880-248125204008.png)
 
 
 ## Conception
