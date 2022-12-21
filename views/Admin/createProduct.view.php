@@ -2,7 +2,8 @@
     'partials/header.php',
     [
         'title' => 'Eelectro Maroc',
-        'description' => 'This is the home page'
+        'description' => 'This is the home page',
+        // 'base_dir'=>$base_dir 
     ]
 ); ?>
 <?= view('partials/adminNav.php') ?>
@@ -25,7 +26,7 @@
                     More actions
                     <i class="fa-regular fa-angle-down"></i>
                 </button>
-                <button class="bg-green-500 text-sm text-white px-5 py-[6px] rounded">
+                <button class="bg-green-500 text-sm hover:bg-green-600 hover:shadow-sm ease-in duration-200 text-white px-5 py-[6px] rounded">
                     Save
                 </button>
             </div>
@@ -168,8 +169,14 @@
                 <input type="number" name="product-name" id="product-name" class="w-full border-2 border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
             </div>
         </div>
-        
-        
+        <div class="Status w-40 ">
+            <label for="status" class="block mb-2 text-sm font-medium opacity-60" >Select a Status</label>
+            <select  id="status" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                <option value="Active" selected>Active </option>
+                <option value="inActive" >inActive </option>
+            </select>
+        </div>
+
 </main>
 </div>
 
