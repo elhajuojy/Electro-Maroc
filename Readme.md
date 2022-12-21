@@ -37,6 +37,9 @@ run the project
 <img  src="https://user-images.githubusercontent.com/86893073/208320390-aeb89ebb-6c63-4d8d-b59f-46c673916b56.png" width="27%" /> 
 </div>
 
+### shopping cart 
+![shopping cart ](https://user-images.githubusercontent.com/86893073/208887699-ecfada7a-28d7-4301-8007-c0a12ec99b2a.png)
+
 ## Admin Dashboard UI 
 
 ![dashbooard](https://user-images.githubusercontent.com/86893073/208782984-c6545d15-c90d-4b4b-ab93-fe784f482e1f.png)
@@ -44,6 +47,8 @@ run the project
 ![productAdminDashboard](https://user-images.githubusercontent.com/86893073/208750616-2645a531-edf4-475e-9e07-b98b6822e7d9.png)
 
 ![create product](https://user-images.githubusercontent.com/86893073/208781086-8c9c45cb-ef4f-48f3-9347-3f13525238d3.png)
+
+
 
 
 
