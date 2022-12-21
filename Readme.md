@@ -40,6 +40,8 @@ run the project
 ### shopping cart 
 ![shopping cart ](https://user-images.githubusercontent.com/86893073/208887699-ecfada7a-28d7-4301-8007-c0a12ec99b2a.png)
 
+![users](https://user-images.githubusercontent.com/86893073/208925558-9cbb6be2-2b9e-4984-9cf2-e301651d22bc.png)
+
 ## Admin Dashboard UI 
 
 ![dashbooard](https://user-images.githubusercontent.com/86893073/208782984-c6545d15-c90d-4b4b-ab93-fe784f482e1f.png)
@@ -47,6 +49,7 @@ run the project
 ![productAdminDashboard](https://user-images.githubusercontent.com/86893073/208750616-2645a531-edf4-475e-9e07-b98b6822e7d9.png)
 
 ![create product](https://user-images.githubusercontent.com/86893073/208781086-8c9c45cb-ef4f-48f3-9347-3f13525238d3.png)
+
 
 
 
