@@ -18,7 +18,7 @@
                 <img src="assets/images/icons/products.svg" alt="">
                 <p>Products</p>
             </a>
-            <a href="#" class="flex gap-4 items-center 
+            <a href="/admin-orders" class="flex gap-4 items-center 
             <?php echo (urlIs('/admin-orders'))?' border p-2 rounded border-gray-300':'' ?>
             hover:text-gray-300">
                 <img src="assets/images/icons/orders.svg" alt="">

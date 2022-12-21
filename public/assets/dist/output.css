@@ -1089,6 +1089,14 @@ body{
   width: 7rem;
 }
 
+.w-\[85\%\] {
+  width: 85%;
+}
+
+.w-\[84\%\] {
+  width: 84%;
+}
+
 .min-w-\[200px\] {
   min-width: 200px;
 }

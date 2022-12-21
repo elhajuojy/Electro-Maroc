@@ -8,11 +8,11 @@
 
 
 
-<main class="containre  m-auto flex scrollbar-hide overflow-hidden bg-gray-50">
+<main class="containre m-auto flex scrollbar-hide overflow-hidden bg-gray-50">
     <?= view('partials/adminNav.php') ?>
-    <section class="w-[83%] ml-auto">
-        <header class="w-full bg-white p-4 flex justify-between container items-center  flex-grow-1 ">
-            <h3 class="text-2xl font-medium opacity-90 font-sans  ">Store overview</h3>
+    <section class="w-[85%] ml-auto">
+        <header class="w-full bg-white p-6 flex justify-between container items-center  flex-grow-1 ">
+            <h3 class="text-2xl opacity-90 font-semibold">Store Overview</h3>
             <div class="input-search ">
                 <span class="text-blue-500 mr-3"><i class="fa-solid fa-magnifying-glass"></i></span>
                 <input type="text" placeholder="Search" class="w-60 h-5 rounded-full focus:outline-none bg-gray-200 p-4">
@@ -29,7 +29,7 @@
             </div>
         </header>
 
-        <div class="activity flex justify-between container sm:p-6">
+        <div class="activity flex justify-between container sm:p-6 ">
             <h3 class=" font-medium text-xl">Activity </h3>
             <div class="date ">
                 <span class="text-blue-400"><i class="fa-solid fa-calendar"></i></span>
