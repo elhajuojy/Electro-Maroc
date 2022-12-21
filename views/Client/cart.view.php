@@ -17,7 +17,7 @@
         <h1 class="text-3xl text-gray-800 font-semibold">Shopping Cart </h1>
     </main>
 
-    <section class="cart-container container-lg mt-4  ">
+    <section class="cart-container container-lg my-4  ">
         <div class="title">
             <!-- <h1 class="text-xl text-gray-800  font-medium">Your Cart</h1> -->
 
@@ -40,7 +40,20 @@
                         // 'cart' => $cart,
                     ]) ?>
                     <?= Widget("lineBreak") ?>
-
+                    <div class="action w-full flex justify-between">
+                        <div class="div">
+                        <button class="rounded-full text-gray-500 font-medium text-xs border-[3px] py-1 px-2">
+                            <a href="/">Contunie Shopping</a>
+                        </button>
+                        <button class="rounded-full text-white bg-black font-medium text-xs  py-1 px-2">
+                            Clear Shopping Cart
+                        </button>
+                        </div>
+                        <button class="rounded-full text-white bg-black font-medium text-xs  py-1 px-2 ">
+                            Update Shopping Cart
+                        </button>
+                        
+                    </div>
                 </div>
                 <div class="summary m-auto  bg-blue-100 p-6 max-w-md rounded shadow">
                     <p class="mt-2 text-2xl font-medium text-gray-800">Summary</p>
