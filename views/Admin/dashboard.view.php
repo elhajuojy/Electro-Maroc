@@ -8,9 +8,9 @@
 
 
 
-<main class="containre m-auto flex scrollbar-hide overflow-hidden bg-gray-50">
-    <?= view('partials/adminNav.php') ?>
-    <section class="w-[85%] ml-auto">
+<?= view('partials/adminNav.php') ?>
+<main class="lg:w-[84%] w-full  ml-auto container p-6">
+    <section class="">
         <header class="w-full bg-white p-6 flex justify-between container items-center  flex-grow-1 ">
             <h3 class="text-2xl opacity-90 font-semibold">Store Overview</h3>
             <div class="input-search ">

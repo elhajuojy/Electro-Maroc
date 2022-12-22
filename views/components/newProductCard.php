@@ -2,7 +2,8 @@
 <div class="new-product-card w-72 max-w-[234px]  grid justify-center gap-4 m-auto">
 <div class="check flex gap-2 ml-[10%] place-items-center  text-color-9  ">
     <div class="rounded ">
-        <i class="fa-solid fa-check"></i>
+        <!-- <i class="fa-solid fa-check"></i> -->
+        <i class="fa-duotone fa-circle-check"></i>
     </div>
     <p>in stock</p>
 </div>

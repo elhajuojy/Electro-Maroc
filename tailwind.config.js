@@ -1,5 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+const color = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin  = require('tailwindcss/plugin');
+
+
 module.exports = {
+  //dark mode is set to class so that we can use it in the html not to a local machine setting
+  darkMode : "class",
   content: ["./**/*.{html,js,ts,jsx,tsx,php}"],
   theme: {
     extend: {
@@ -12,9 +19,8 @@ module.exports = {
         'color-6' : "#CACDD8",
         'color-7' : "#000000",
         'color-8' : "#C94D3F",
-        'color-9' : "#78A962",
-          'color-10' : "#666666",
-  
+          'color-9' : "#78A962",
+        'color-10' : "#666666",
       },
       fontFamily: {
         'poppins': ['"Poppins"', 'sans-serif'],
