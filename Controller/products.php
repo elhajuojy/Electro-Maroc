@@ -4,8 +4,11 @@
 
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
-    // $products = new Products();
-    // $products = $products->all();
+
+    if(get('id')){
+        view('productDetails.view.php', ['title' => 'Product','description' => 'Product','product' => get('id')]);
+        die();
+    }
 }
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 

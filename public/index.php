@@ -43,6 +43,7 @@ $App->setRoutes([
     '/admin-createProduct' => 'Controller/Admin/createProduct.php',
     '/admin-users' => 'Controller/Admin/users.php',
     '/admin-orders' => 'Controller/Admin/orders.php',
+    
     // "/admin/create"=>'Controller/Admin/products.php',  
 ],BASE_PATH);
 
