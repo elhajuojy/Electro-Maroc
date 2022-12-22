@@ -36,9 +36,11 @@ run the project
 <img  src="https://user-images.githubusercontent.com/86893073/208320384-5ed68943-f84f-4afc-8528-883dac26c6c4.png" width="70%" /> 
 <img  src="https://user-images.githubusercontent.com/86893073/208320390-aeb89ebb-6c63-4d8d-b59f-46c673916b56.png" width="27%" /> 
 </div>
-
-### shopping cart 
+ 
 ![shopping cart ](https://user-images.githubusercontent.com/86893073/208887699-ecfada7a-28d7-4301-8007-c0a12ec99b2a.png)
+
+![products](https://user-images.githubusercontent.com/86893073/209167413-8dedc035-b5bc-4531-8b32-0f7dcb687502.png)
+
 
 
 
