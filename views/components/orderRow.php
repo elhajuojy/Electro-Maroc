@@ -4,11 +4,14 @@
     <td class="py-6 hidden md:block  "><?= $products ?></td>
     <td class="py-6 "><?= $date ?></td>
     <td class="py-6 ">
-        <p class="border-2 flex justify-center rounded-full text-green-700 font-medium">
+        <p class=" flex justify-center rounded-full text-green-700 font-medium">
             <?= $status ?>
         </p>
     </td>
-    <td class="py-6 "><?= $delivery ?></td>
+    <td class="py-6  text-green-700 font-medium flex justify-center items-center gap-2">
+        <div class="circle rounded-full w-2 h-2  bg-gray-200"></div>
+        <?= $delivery ?>
+    </td>
     <td class="py-6 "><?= $total ?></td>
     <td class="py-6 ">
         <a href="" class="text-blue-500"><?= $action ?></a>

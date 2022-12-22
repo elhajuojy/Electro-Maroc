@@ -36,6 +36,7 @@ $App->setRoutes([
     '/login' => 'Controller/login.php',
     '/logout' => 'Controller/logout.php',
     '/register' => 'Controller/register.php',
+    '/products' => 'Controller/products.php',
     '/admin' => 'Controller/Admin/dashboard.php',
     '/cart' => 'Controller/Client/cart.php',
     '/admin-products' => 'Controller/Admin/products.php',
