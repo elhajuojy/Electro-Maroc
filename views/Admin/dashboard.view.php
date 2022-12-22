@@ -9,7 +9,7 @@
 
 
 <?= view('partials/adminNav.php') ?>
-<main class="lg:w-[84%] w-full  ml-auto container p-6">
+<main class="lg:w-[84%] w-full  ml-auto container ">
     <section class="">
         <header class="w-full bg-white p-6 flex justify-between container items-center  flex-grow-1 ">
             <h3 class="text-2xl opacity-90 font-semibold">Store Overview</h3>
@@ -41,118 +41,147 @@
         <main class="lg:flex">
             <section class="container lg:w-[70%] w-full lg:p-6  ">
                 <div class="activity-cards grid grid-cols-4">
-                <?= Widget('activityCard', [
-                    'title' => 'Total sales',
-                    'value' => '$456,22.1',
-                    'icon' => 'fa-solid fa-shopping-bag',
-                    'color' => 'bg-blue-500',
-                    'iconColor' => 'text-blue-500',
-                    'grow'=> '+ 20,45 %'
-                ]) ?>
-                <?= Widget('activityCard', [
-                    'title' => 'Visitors',
-                    'value' => '632.22',
-                    'icon' => 'fa-regular fa-user-plus',
-                    'color' => 'bg-blue-500',
-                    'iconColor' => 'text-blue-500',
-                    'grow'=> '+ 9 %'
-                ]) ?>
-                <?= Widget('activityCard', [
-                    'title' => 'Total orders',
-                    'value' => '3,456.22',
-                    'icon' => 'fa-solid fa-wallet',
-                    'color' => 'bg-blue-500',
-                    'iconColor' => 'text-blue-500',
-                    'grow'=> '+ 7,45 %'
-                ]) ?>
-                <?= Widget('activityCard', [
-                    'title' => 'Refunded',
-                    'value' => '503.22',
-                    'icon' => 'fa-solid fa-arrow-rotate-left',
-                    'color' => 'bg-blue-500',
-                    'iconColor' => 'text-blue-500',
-                    'grow'=> '+ 4,3 %'
-                ]) ?>
+                    <?= Widget('activityCard', [
+                        'title' => 'Total sales',
+                        'value' => '$456,22.1',
+                        'icon' => 'fa-solid fa-shopping-bag',
+                        'color' => 'bg-blue-500',
+                        'iconColor' => 'text-blue-500',
+                        'grow' => '+ 20,45 %'
+                    ]) ?>
+                    <?= Widget('activityCard', [
+                        'title' => 'Visitors',
+                        'value' => '632.22',
+                        'icon' => 'fa-regular fa-user-plus',
+                        'color' => 'bg-blue-500',
+                        'iconColor' => 'text-blue-500',
+                        'grow' => '+ 9 %'
+                    ]) ?>
+                    <?= Widget('activityCard', [
+                        'title' => 'Total orders',
+                        'value' => '3,456.22',
+                        'icon' => 'fa-solid fa-wallet',
+                        'color' => 'bg-blue-500',
+                        'iconColor' => 'text-blue-500',
+                        'grow' => '+ 7,45 %'
+                    ]) ?>
+                    <?= Widget('activityCard', [
+                        'title' => 'Refunded',
+                        'value' => '503.22',
+                        'icon' => 'fa-solid fa-arrow-rotate-left',
+                        'color' => 'bg-blue-500',
+                        'iconColor' => 'text-blue-500',
+                        'grow' => '+ 4,3 %'
+                    ]) ?>
                 </div>
                 <div class="recent-invoice ">
                     <div class="recent-invoice-header flex justify-between mt-6 ">
                         <h3 class=" font-medium text-xl">Recent invoices</h3>
                         <div class=" flex gap-4">
-                        <div class="select-invoice flex gap-2">
-                            <p>All Channels </p>
-                            <span class="text-blue-300"><i class="fa-light fa-angle-right"></i></span>
-                        </div>
-                        <div class="filter flex gap-2">
-                            <p>Filters </p>
-                            <span class="text-blue-300"><i class="fa-solid fa-bars-filter"></i></span>
-                            
-                        </div>
+                            <div class="select-invoice flex gap-2">
+                                <p>All Channels </p>
+                                <span class="text-blue-300"><i class="fa-light fa-angle-right"></i></span>
+                            </div>
+                            <div class="filter flex gap-2">
+                                <p>Filters </p>
+                                <span class="text-blue-300"><i class="fa-solid fa-bars-filter"></i></span>
+
+                            </div>
                         </div>
                     </div>
                     <div class="invoices-datagrid mt-6 font-medium opacity-90 ">
-                        <div class="invoices-header-title flex gap-2 m-auto  mb-2 justify-between">
-                            <p>No.</p>
-                            <p>Id Order 
-                                <span class="text-blue-300"><i class="fa-light fa-angle-down"></i></span>
-                            </p>
-                            <p>Customer Name</p>
-                            <p>Order Date
-                                <span class="text-blue-300"><i class="fa-light fa-angle-down"></i></span>
-                            </p>
-                            <p>City</p>
-                            <p>Order Status</p>
-                            <p>Amount </p>
-                        </div>
-                        <div class="divider w-full h-[2px] mb-2 bg-blue-200">
-
-                        </div>
-                        <div class="invoices-content ">
-                            <div class="invoices-content-title flex gap-2 m-auto mb-2 opacity-70 justify-between">
-                                <p>1</p>
-                                <p>123456</p>
-                                <p>John Doe</p>
-                                <p>20 May 2021</p>
-                                <p>Paris</p>
-                                <p>Delivered</p>
-                                <p>$ 123.00</p>
-                            </div>
-                            <div class="invoices-content-title flex gap-2 m-auto mb-2 opacity-70 justify-between ">
-                                <p>2</p>
-                                <p>123456</p>
-                                <p>John Doe</p>
-                                <p>20 May 2021</p>
-                                <p>Paris</p>
-                                <p>Delivered</p>
-                                <p>$ 123.00</p>
-                            </div>
-                            <div class="invoices-content-title flex gap-2 mb-2 m-auto opacity-70 justify-between">
-                                <p>3</p>
-                                <p>123456</p>
-                                <p>John Doe</p>
-                                <p>20 May 2021</p>
-                                <p>Paris</p>
-                                <p>Delivered</p>
-                                <p>$ 123.00</p>
-                            </div>
-                            <div class="invoices-content-title flex gap-2 mb-2 m-auto opacity-70 justify-between">
-                                <p>4</p>
-                                <p>123456</p>
-                                <p>John Doe</p>
-                                <p>20 May 2021</p>
-                                <p>Paris</p>
-                                <p>Delivered</p>
-                                <p>$ 123.00</p>
-                            </div>
-                            <div class="invoices-content-title flex gap-2 mb-2 m-auto opacity-70 justify-between">
-                                <p>5</p>
-                                <p>123456</p>
-                                <p>John Doe</p>
-                                <p>20 May 2021</p>
-                                <p>Paris</p>
-                                <p>Delivered</p>
-                                <p>$ 123.00</p>
-                            </div>
-                        </div>
+                        <table class="w-full text-lg mt-4 rounded-sm text-center ">
+                            <thead class="text-gray-700  bg-gray-100 rounded">
+                                    <th>No.</th>
+                                    <th>Id Order</th>
+                                    <th>Customer Name</th>
+                                    <th>Order Date</th>
+                                    <th>City</th>
+                                    <th>Order Status</th>
+                                    <th>Amount</th>
+                            </thead>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                            <tr class=" text-gray-500 border-y-2 py-4" >
+                                <td>1</td>
+                                <td>123456</td>
+                                <td>John Doe</td>
+                                <td>20 May 2021</td>
+                                <td>Paris</td>
+                                <td>Delivered</td>
+                                <td>$ 123.00</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </section>
@@ -219,7 +248,7 @@
                 </div>
             </aside>
         </main>
-        
+
     </section>
 
 </main>
