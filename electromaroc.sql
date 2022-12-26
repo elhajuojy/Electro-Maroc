@@ -87,6 +87,12 @@ CREATE Table Produit (
     PRIMARY KEY (idProduit)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+// add rating colum to the produit table 
+
+
+ALTER TABLE Produit ADD rating int(11) NOT NULL default 0;
+
+
 CREATE TABLE images (
     id int(11) NOT NULL AUTO_INCREMENT,
     image_path varchar(255) NOT NULL,
@@ -94,6 +100,28 @@ CREATE TABLE images (
     Foreign Key (idProduit) REFERENCES Produit(idProduit),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE cart;
+CREATE TABLE cart ( 
+    id int(11) NOT NULL AUTO_INCREMENT,
+    idProduit int(11) NOT NULL,
+    bought int(11) NOT NULL default 0,
+    idClient int(11) NOT NULL,
+    quantite int(11) NOT NULL,
+    Foreign Key (idProduit) REFERENCES Produit(idProduit),
+    Foreign Key (idClient) REFERENCES Client(idClient),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (1, 1, 1, 0);
+INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (2, 1, 1, 0);
+INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (3, 1, 1, 0);
+INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (4, 1, 1, 0);
+INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (5, 1, 1, 0);
+
+
+
 
 INSERT into produit (nom, code_barre, REFERENCE, prix_achat, prix_final, prix_offer, quantite, description, image)
 VALUES 
@@ -165,6 +193,10 @@ CREATE Table Commande (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+-- status filed 
+
+ALTER TABLE commande ADD status varchar(255) NOT NULL DEFAULT 'pending';
+
 SELECT `idClient` FROM client;
 INSERT INTO commande (dateCommande, dateLivraison, dateDenvoi, idClient) VALUES
 ('2020-01-01', '2020-01-01', '2020-01-01', 7),
@@ -172,6 +204,7 @@ INSERT INTO commande (dateCommande, dateLivraison, dateDenvoi, idClient) VALUES
 ('2020-01-01', '2020-01-01', '2020-01-01', 9),
 ('2020-01-01', '2020-01-01', '2020-01-01', 8),
 ('2020-01-01', '2020-01-01', '2020-01-01', 6);
+
 
 
 SELECT * FROM commande;
@@ -233,20 +266,19 @@ SELECT * FROM client INNER JOIN commande ON client.idClient = commande.idClient 
 SELECT * FROM produit_commande INNER JOIN produit ON produit_commande.idProduit = produit.idProduit;
 
 --get all commande products of a client
-SELECT client.nom_complet,commande.`dateCommande` ,produit.nom, produit.prix_final from commande
-INNER JOIN produit_commande ON commande.idCommande = produit_commande.idCommande AND commande.idCommande = 6 
+SELECT  client.nom_complet,commande.`dateCommande`,commande.status  ,produit.nom, produit.prix_final from commande
+INNER JOIN produit_commande ON commande.idCommande = produit_commande.idCommande 
 INNER JOIN client ON commande.idClient = client.idClient
-INNER JOIN produit ON produit_commande.idProduit = produit.idProduit
-AND client.idClient = 7;
+INNER JOIN produit ON produit_commande.idProduit = produit.idProduit;
+
+
+
 
 -- get sum of commande did by client 
 SELECT SUM(produit.prix_final) , commande.`dateCommande` 
 FROM produit_commande INNER JOIN produit ON produit_commande.idProduit = produit.idProduit AND produit_commande.idCommande = 6
 INNER JOIN commande ON produit_commande.idCommande = commande.idCommande AND commande.idClient = 7;
 
-
-
---1.4
 
 -- get total of commanes of a client
 SELECT SUM() FROM commande WHERE idClient = 7;
@@ -258,3 +290,9 @@ SELECT prix_final FROM produit WHERE idProduit = 1;
 
 
 --1.5
+
+SELECT * FROM commande INNER JOIN produit_commande 
+ON commande.idCommande = produit_commande.idCommande 
+INNER JOIN client ON commande.idClient = client.idClient
+
+;
