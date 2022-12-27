@@ -6,7 +6,7 @@ use Core\App;
 abstract class  Model {
 
 
-    private Database  $db ;
+    private Database  $db  ;
 
     protected string $table ;
     protected string $classname ;
@@ -20,8 +20,9 @@ abstract class  Model {
         $this->classname = $table;
     }
 
-    public function findAll(){
 
+    public function findAll(){
+        
         return $this->db->query("SELECT * FROM ".$this->table)->find($this->classname);
     }
 
@@ -34,6 +35,10 @@ abstract class  Model {
         return $this->db->query("DELETE FROM ".$this->table." WHERE id = :id",['id'=>$id]);
     }
 
+
+    public function getByLimit(int $limit){
+        return $this->db->query("SELECT * FROM ".$this->table." LIMIT ".$limit)->find($this->classname);
+    }
     
 
     public function insert(array $data): Database
@@ -81,11 +86,36 @@ abstract class  Model {
             $params[":".$key] = $value; 
         }
         return $this->db->query($sql,$params);
+
     }
 
     public function findByUsername(string $username){
         return $this->db->query("SELECT * FROM ".$this->table." WHERE username = :username",['username'=>$username])->findOne($this->classname);
     }
+
+
+    public function findByField(string $field, string $value){
+        return $this->db->query("SELECT * FROM ".$this->table." WHERE ".$field." = :".$field,[':'.$field=>$value])->find($this->classname);
+    }
+
+    public function findByFileds(array $fields){
+        $sql = "SELECT * FROM ".$this->table." WHERE ";
+        $params = [];
+        $i = 0;
+        foreach ($fields as $key => $value) {
+            $sql .= $key." = :".$key;
+            if($i < count($fields)-1){
+                $sql .= " AND ";
+            }
+            $params[":".$key] = $value;
+            $i++;
+        }
+        return $this->db->query($sql,$params)->find($this->classname);
+    }
+
+
+
+
 
 
     public function findByEmail(string $email)
