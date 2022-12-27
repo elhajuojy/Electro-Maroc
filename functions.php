@@ -1,5 +1,7 @@
 <?php
 
+define("MB", 1048576);
+
 function dd($value)
 {
     echo "<pre>";
@@ -37,6 +39,11 @@ function base_path($path)
     return BASE_PATH . $path;
 }
 
+function isLogedIn()
+{
+    return isset($_SESSION['client']);
+}
+
 function view($path, $attributes = [])
 {
     extract($attributes);
@@ -48,6 +55,16 @@ function view($path, $attributes = [])
     return password_hash($value, PASSWORD_DEFAULT);
 }
 
+
+function goToPage($page)
+{
+    header("Location: {$page}");
+    die();
+}
+
+
+
+
 function verifyPassword($value, $hash): bool
 {
     return password_verify($value, $hash);
@@ -58,6 +75,29 @@ function Widget($name, $data = [])
 {
     extract($data);
     require base_path("views/components/{$name}.php");
+}
+
+function isAdmin()
+{   
+    if(isset($_SESSION['role'])){
+        if($_SESSION['role'] == 'admin'){
+            return true;
+        }
+    }
+    return false;
+}   
+
+
+
+
+function isClient()
+{   
+    if(isset($_SESSION['role'])){
+        if($_SESSION['role'] == 'client'){
+            return true;
+        }
+    }
+    return false;
 }
 
 
