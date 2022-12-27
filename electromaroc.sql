@@ -92,6 +92,10 @@ CREATE Table Produit (
 
 ALTER TABLE Produit ADD rating int(11) NOT NULL default 0;
 
+-- add created_at and updated_at to the cart table
+ALTER TABLE produit ADD created_at timestamp NOT NULL default CURRENT_TIMESTAMP;
+ALTER TABLE produit ADD updated_at timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP;
+
 -- add status of the produit to the table 
 
 ALTER TABLE Produit ADD status varchar(255) NOT NULL default 'active';
@@ -122,6 +126,7 @@ INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (2, 1, 1, 0);
 INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (3, 1, 1, 0);
 INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (4, 1, 1, 0);
 INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (5, 1, 1, 0);
+
 
 
 
@@ -299,3 +304,15 @@ ON commande.idCommande = produit_commande.idCommande
 INNER JOIN client ON commande.idClient = client.idClient
 
 ;
+
+
+--get all products with therre cqtegories
+
+;
+
+SELECT produit.*,categorie.nom  FROM produit INNER JOIN produit_sous_categorie ON produit.idProduit = produit_sous_categorie.idProduit
+INNER JOIN sous_categorie ON produit_sous_categorie.idSous_Categorie = sous_categorie.idSous_Categorie
+INNER JOIN categorie ON sous_categorie.idCategorie = categorie.idCategorie WHERE categorie.nom = 'Desktop' AND produit.status = 'active';
+
+
+SELECT * from categorie;
