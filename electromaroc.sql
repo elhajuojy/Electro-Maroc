@@ -92,6 +92,9 @@ CREATE Table Produit (
 
 ALTER TABLE Produit ADD rating int(11) NOT NULL default 0;
 
+-- add status of the produit to the table 
+
+ALTER TABLE Produit ADD status varchar(255) NOT NULL default 'active';
 
 CREATE TABLE images (
     id int(11) NOT NULL AUTO_INCREMENT,
