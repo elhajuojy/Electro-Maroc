@@ -1,8 +1,10 @@
 <nav class="h-screen fixed  hidden lg:block w-60 shadow-lg min-w-min bg-slate-800 text-color-1">
-        <div class="logo flex p-6 gap-4 justify-center items-center place-content-center">
-            <img src="assets/images/Logo.svg" alt="">
-            <p>Electro Matoc</p>
-        </div>
+        <a href="/">
+            <div class="logo flex p-6 gap-4 justify-center items-center place-content-center">
+                <img src="assets/images/Logo.svg" alt="">
+                <p>Electro Matoc</p>
+            </div>
+        </a>
         <div class="w-[80%] h-[2px] m-auto rounded bg-gray-600"></div>
         <div class="links flex flex-col gap-4 p-6">
             <a href="/admin" class="flex gap-4 items-center 
