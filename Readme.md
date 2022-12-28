@@ -62,7 +62,8 @@ run the project
 
 ## Database Design 
 
-![database v2](https://user-images.githubusercontent.com/86893073/208783004-6ef0ab6e-a7cf-462b-8880-248125204008.png)
+![electro_maroc_db ](https://user-images.githubusercontent.com/86893073/209837369-a3e046e1-0deb-4a48-96e5-2c26d93afa75.png)
+
 
 
 ## Conception
