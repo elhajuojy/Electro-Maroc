@@ -1,5 +1,8 @@
 
 <?php
+if(!isLogedIn()){
+    goToPage('/login');
+}
 
 use Model\Cart;
 use Model\Produit;

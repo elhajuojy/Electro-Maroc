@@ -11,7 +11,9 @@ function confirmOrder(idUser){
             sweetAlert(data);
             if(data.total > 0){
                // reload page
-               location.replace(location.href.split('#')[0]);
+                setTimeout(() => {
+                location.replace(location.href.split('#')[0]);
+              }, 2000);
             }
         }
     })
@@ -36,7 +38,7 @@ function sweetAlertWithCheck(id){
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, Confirm it!'
     }).then((result) => {
         if (result.isConfirmed) {
             confirmOrder(id);
