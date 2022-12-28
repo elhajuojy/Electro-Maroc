@@ -1,7 +1,6 @@
 <?php
 
 use Core\App;
-use Model\notes;
 use Model\Client;
 
 
@@ -26,7 +25,7 @@ $App->setDatabase( dbConfig:   $config['database']);
 
 // $client = new Client();
 // $client->logOut();
-// echo $_SESSION['client'];
+// echo $_SESSION['client'];j
 
 //$client->add('mohamed','11@gmail.com','123456','mohamed ali',123456,'cairo 1123 event',city: 'cairo');
 
@@ -42,11 +41,14 @@ $App->setRoutes([
     '/admin-products' => 'Controller/Admin/products.php',
     '/admin-createProduct' => 'Controller/Admin/createProduct.php',
     '/admin-users' => 'Controller/Admin/users.php',
+    '/uploadImage'=>'Controller/uploadImage.php',
+    '/order'=> 'Controller/order.php',
     '/admin-orders' => 'Controller/Admin/orders.php',
-    
     // "/admin/create"=>'Controller/Admin/products.php',  
 ],BASE_PATH);
 
+
+// echo $_SESSION['role']??'not set';
 
 //run the app
 $App->run();

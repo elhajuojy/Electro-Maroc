@@ -35,6 +35,12 @@ class Users extends  Model
 
     }
 
+    public function getAllUsers(){
+        return $this->findAll();
+    }
+
+    
+
 
 
 }

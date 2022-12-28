@@ -6,31 +6,37 @@
     ]
 ); ?>
 
+
 <?php view('partials/banner.php'); ?>
 <?php view('partials/navbar.php'); ?>
 <section class=" m-auto grid justify-center container items-center  px-4 md:px-0">
     <div class="home-bg">
-        <img src="assets/images/home/bg-msi.png" alt="">
+        <img src="assets/images/home/bg-msi.png" alt="msi laptop">
     </div>
     <div class="new-products">
         <div class="title flex justify-between py-4">
             <h4 class="text-2xl font-bold">New Products</h4>
-            <a href="#" class="text-color-3 underline">See All New Products</a>
+            <a href="/products" class="text-color-3 underline">See All New Products</a>
         </div>
         <div class="products-container flex justify-between w-full flex-wrap justify-items-center m-auto gap-4">
-            <?= Widget('newProductCard', [
-                'img' => 'assets/images/home/product-1.png',
-                'title' => 'MSI GF63 Thin 10SCSR-062',
-                'price' => '$1,299.99',
-                'oldPrice' => '$1,399.99',
-                'discount' => '10%',
-                'rating' => '4.5',
-                'reviews' => '(10)',
-                'link' => '/product/1',
-            ]) ?>
-            <?= Widget('newProductCard') ?>
-            <?= Widget('newProductCard') ?>
-            <?= Widget('newProductCard') ?>
+            <?php foreach($products as $product): ?>
+                <?php 
+                    if($product->status == "active"){
+                        echo Widget('newProductCard', [
+                            'id' => $product->idProduit,
+                            'quantity' => $product->quantite,
+                            'img' => $product->image,
+                            'title' => $product->nom,
+                            'price' => $product->prix_final,
+                            'oldPrice' => $product->prix_achat,
+                            'discount' => '10%',
+                            'rating' => '4.5',
+                            'reviews' => '(10)',
+                            'link' => '/product/'.$product->idProduit,
+                        ]) ;
+                    }    
+                ?>
+            <?php endforeach; ?>
         </div>
     </div>
     <div class="my-6 zip-content-divider flex justify-center bg-color-1 container w-full  p-2 gap-2">
@@ -45,7 +51,7 @@
         <p>MSI GL Series</p>
         <p>MSI GE Series</p>
     </div>
-    <div class="custom-build-container flex flex-wrap ">
+    <div class="custom-build-container flex flex-wrap justify-between ">
         
         <div class=" custom-build w-72 max-w-[234px] text-color-1 grid items-center justify-center text-center">
             <div></div>

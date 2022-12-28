@@ -17,17 +17,18 @@
         </p>
         <div class="flex justify-end items-center gap-4">
             <p class="x justify-self-end">
-                On Sale from $3,299.00
+                On Sale from $<?=$product[0]->prix_final?>
             </p>
+            
             <div class="cart-item-quantity w-20">
                 <div class="quantity-input border-2 rounded p-1">
                     <!-- <button class="minus">-</button> -->
-                    <input type="number" class="quantity w-10 font-bold" value="1" />
+                    <input type="number" min="0" max="<?=$product[0]->quantite  ?>" class="quantity w-10 font-bold" value="1" />
                     <button class="plus">+</button>
                 </div>
             </div>
             <div class="checkout-btn w-80 rounded m-auto">
-                <button class="bg-blue-700 hover:bg-blue-700 text-white font-base w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
+                <button onclick="addToCart(<?=get('id')?>)" class="bg-blue-600 ease-in duration-200 hover:bg-blue-700 text-white font-base w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
                     Add to Cart
                 </button>
             </div>
@@ -42,11 +43,11 @@
 </nav>
 <!-- <?= Widget('lineBreak') ?> -->
 <hr>
-<main class=" w-full bg-blue-50 ">
+<main class=" w-full">
     <section class="product grid justify-center items-center  lg:grid-cols-2 lg:w-[80%] m-auto">
         <article>
             <?php view('partials/routeGuide.php', ['route' => 'Home  ›  Laptops  ›  MSI WS Series']); ?>
-            <h1 class="text-3xl ">MSI MPG Trident 3</h1>
+            <h1 class="text-3xl "><?=$product[0]->nom?? 'MSI MPG Trident 3' ?></h1>
             <a href="#" class="text-blue-400 leading-8">Be the first to review this product</a>
             <ul>
                 <li class="text-sm leading-6">• Intel Core i7-10700F</li>
@@ -65,9 +66,9 @@
             </ul>
         </article>
         <div class="img-container m-auto mt-10 ">
-            <div class=". w-60">
+            <div class=". w-96">
 
-                <img src="assets/images/products/laptop-x.png" class="w-full " alt="">
+                <img src= <?=$product[0]->image?? "assets/images/products/laptop-x.png" ?> class="w-full " alt="">
             </div>
             <p class=" opacity-75 text-sm w-72 flex gap-4">
                 <img src="assets/images/Logo.svg" class="w-10" alt="">
@@ -93,5 +94,7 @@
 <?php view('partials/footer.php', [
     'scripts' => '
     <script src="assets/js/toggle.js"></script>
+    <script  src="assets/js/addToCart.js"></script>
     ',
 ]); ?>
+

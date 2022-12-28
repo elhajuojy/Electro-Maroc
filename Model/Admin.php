@@ -1,9 +1,9 @@
 <?php
 
 namespace  Model;
+use Model\Users;
 
-
-class  Admin extends User {
+class  Admin extends Users {
 
 
     public function __construct($username, $email, $password)

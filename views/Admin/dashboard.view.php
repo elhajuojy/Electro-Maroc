@@ -100,87 +100,18 @@
                                     <th>Order Status</th>
                                     <th>Amount</th>
                             </thead>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
-                            <tr class=" text-gray-500 border-y-2 py-4" >
-                                <td>1</td>
-                                <td>123456</td>
-                                <td>John Doe</td>
-                                <td>20 May 2021</td>
-                                <td>Paris</td>
-                                <td>Delivered</td>
-                                <td>$ 123.00</td>
-                            </tr>
+                            <?php foreach ($commandes as $invoice) : ?>
+                                <tr class="bg-white text-gray-700">
+                                    <td class="py-2"><?= $invoice['id']??"" ?></td>
+                                    <td class="py-2"><?= $invoice['id_order']??4433 ?></td>
+                                    <td class="py-2"><?= $invoice['nom_complet'] ?></td>
+                                    <td class="py-2"><?= $invoice['dateCommande'] ?></td>
+                                    <td class="py-2"><?= $invoice['city']??"casa" ?></td>
+                                    <td class="py-2"><?= $invoice['status'] ?></td>
+                                    <td class="py-2"><?= $invoice['prix_final']??"" ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        
                         </table>
                     </div>
                 </div>

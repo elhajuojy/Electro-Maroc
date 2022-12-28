@@ -41,6 +41,10 @@ abstract class  Model {
     }
     
 
+    public function query(string $sql, array $params = null){
+        return $this->db->query($sql,$params);
+    }
+
     public function insert(array $data): Database
     {
         $sql = "INSERT INTO ".$this->table." (";
@@ -70,7 +74,7 @@ abstract class  Model {
         return $this->db->query($sql,$params);
     }
 
-    public function update(int $id, array $data): Database
+    public function update(int $id, array $data)
     {
 
         $sql = "UPDATE ".$this->table." SET ";

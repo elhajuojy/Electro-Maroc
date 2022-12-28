@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password  = $User->password;
         if ($password == $User->password) {
             $_SESSION['client'] = $User->username;
+            $_SESSION['id'] = $User->id;
             $_SESSION['role'] = $User->role;
             header('Location: /');
         }

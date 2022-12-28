@@ -38,14 +38,27 @@
                 <p class="border-2 text-sm text-center w-auto rounded-full border-gray-500 px-2 py-1">
                     Clear Filter
                 </p>
-                <p>
+                <p class="my-4">
                     Category
                 </p>
                 <ul class="text-sm mt-4">
-                    <li>CUSTOM PCS </li>
-                    <li>MSI ALL-IN-ONE PCS</li>
-                    <li>HP/COMPAQ PCS</li>
+                    <?php foreach ($categories as $category) : ?>
+                        <li class=". cursor-pointer hover:text-gray-700">
+                            <a href=""><?= $category->nom ?></a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
+                <p class="my-4">
+                    Sous Category
+                </p>
+                <ul class="text-sm mt-4">
+                    <?php foreach ($categories as $category) : ?>
+                        <li class=". cursor-pointer hover:text-gray-700">
+                            <a href=""><?= $category->nom ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                
                 <p class="mt-6">
                     Price
                 </p>
@@ -83,18 +96,23 @@
                 </div>
             </div>
             <div class="products-list grid grid-cols-1  my-5 md:grid-cols-2 lg:grid-cols-4 justify-between">
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
-                <?= Widget('newProductCard') ?>
+                <?php 
+                    // echo dd($products);
+                ?>
+                <?php foreach ($products as $product) : ?>
+                    <?= Widget('newProductCard', [
+                        'id' => $product['idProduit'],
+                        'quantity' => $product['quantite'],
+                        'img' => $product['image'],
+                        'title' => $product['nom'],
+                        'price' => $product['prix_offer'],
+                        'oldPrice' => $product['prix_final'],
+                        'discount' => '10%',
+                        'rating' => '4.5',
+                        'reviews' => '(10)',
+                        'link' => '/product/'.$product['idProduit'],
+                    ]) ?>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>

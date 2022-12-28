@@ -39,31 +39,28 @@
             <p class="opacity-70">Customers</p>
         </div>
         <div class="customers-list mt-6 w-[90%] ">
-            <div class="header flex justify-between">
-                <p>Check</p>
-                <p class="-mx-[10%]">profile</p>
-                <p>Name </p>
-                <p class="shrink ">Email</p>
-                <!-- <p></p> -->
-                <p class="">number</p>
-                <p>City/country</p>
-            </div>
-            <?= Widget('lineBreak') ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview',[
-                // 'name' => 'Jordan Kenndy',
-                // 'email' => 'email@gmai.com',
-                // 'number' => '0659707721',
-                // 'city' => 'Safi,Maroc',
-                // 'image'=> 'https://flowbite.com/docs/images/people/profile-picture-5.jpg'
-            ]) ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview') ?>
-            <?= Widget('customerPreview') ?>
+            <table class="w-full  text-lg mt-4 rounded-sm text-center ">
+                <thead class="text-gray-700 bg-gray-100 rounded">
+                    <th>Check.</th>
+                    <th>profile </th>
+                    <th>Name </th>
+                    <th>Email</th>
+                    <th>Number </th>
+                    <th>City/country</th>
+                </thead>
+                <?php foreach ($clients as $client) : ?>
+                    <tr class="bg-white text-gray-700">
+                        <td class="py-2"><input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"></td>
+                        <td class="py-2"><img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="" class="w-10 h-10 rounded-full"></td>
+                        <td class="py-2"><?= $client->nom_complet ?></td>
+                        <td class="py-2"><?= $client->email ?></td>
+                        <td class="py-2"><?= $client->telephone ?></td>
+                        <!-- <td class="py-2"><?= $client->ville ?></td> -->
+                        <td class="py-2"><?= $client->pays ?></td>
+                    </tr>
+                <?php endforeach; ?>
+
+            </table>
         </div>
     </section>
 </div>

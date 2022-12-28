@@ -77,16 +77,19 @@
             </div>
             <div class="divider w-full h-[2px] rounded opacity-60 bg-gray-300"></div>
             <div class="products-list">
-                <?= Widget('productPreviewCard', [
-                    'title' => 'Product 1',
-                    'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    'price' => '1000',
-                    'image' => 'assets/images/products/1.jpg',
-                    'id' => '1'
-                ]) ?>
-                <?= Widget('productPreviewCard') ?>
-                <?= Widget('productPreviewCard') ?>
-                <?= Widget('productPreviewCard') ?>
+                <?php foreach ($products as $product) : ?>
+                    <?= Widget('productPreviewCard', [
+                        'title' => $product->nom,
+
+                        'description' => $product->description,
+                        'price' => $product->prix_final,
+                        'code_barre' => $product->code_barre,
+                        'image' => $product->image,
+                        'quantity' => $product->quantite,
+                        'id' => $product->idProduit,
+                        'status'=> $product->status
+                    ]) ?>
+                <?php endforeach; ?>
             </div>
         </section>
         <nav aria-label="Page navigation example" class="grid justify-center mt-6 ">
@@ -119,3 +122,7 @@
 
 
 </div>
+
+<?php view('partials/footer.php',[
+    'scripts'=> '<script src="assets/js/changeProductStatus.js"></script>'
+]) ?>

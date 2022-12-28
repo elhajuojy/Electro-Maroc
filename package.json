@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tw:build": "npx tailwindcss -i ./public/assets/css/input.css -o ./public/assets/dist/output.css --watch"
+    "tw:build": "npx tailwindcss -i ./public/assets/css/input.css -o ./public/assets/dist/output.css --watch",
+    "start": "PHP -S localhost:8000 -t public & npx tailwindcss -i ./public/assets/css/input.css -o ./public/assets/dist/output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "swal": "^0.1.0",
+    "sweetalert2": "^11.6.16"
   }
 }

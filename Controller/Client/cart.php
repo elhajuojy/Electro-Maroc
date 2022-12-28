@@ -6,17 +6,27 @@ use Model\Produit;
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     //todo get all products in cart for this user
+    // check if he click on confirm order
+
+
     $cart = new Cart();
     $cart = $cart->findByFileds(['idUser' => $_SESSION['id']]);
     // dd($cart);
     $products = [];
+
     foreach($cart as $c){
+        if($c->bought == 1){
+            
+            continue;
+        }
+        // $counter++;
         $product = new Produit();
         $product = $product->findByField('idProduit', $c->idProduit);
         // $product->quantity = $c->quantite;
         $products[] = $product;
     }
-    
+    // echo $counter;
+
     view('Client/cart.view.php', [
         'title' => 'Client Eelectro Maroc',
     'description' => 'This is the Client ',
@@ -33,6 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    echo "post";
 
     if(isset($_POST['addToCart'])){
 
@@ -46,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $idUser = $_SESSION['id'];
         
         $cart = new Cart();        
-        $cart =  $cart->findByFileds(['idUser' => $_SESSION['id'], 'idProduit' => $_POST['idProduit']]);
+        $cart =  $cart->findByFileds(['idUser' => $_SESSION['id'], 'idProduit' => $_POST['idProduit' ], 'bought' => 0]);
         $messg = "";
         if($cart){
             $cart1 = new Cart();

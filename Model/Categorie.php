@@ -3,9 +3,13 @@
 namespace Model;
 
 use Core\Model;
+use Core\App;
+use Core\Database;
 
-class Categoriee extends Model
+class Categorie 
 {
+
+    private Database $db ;
 
     public int $idCategorie;
     public string $nom;
@@ -14,8 +18,23 @@ class Categoriee extends Model
 
     public function __construct()
     {
-        parent::__construct(get_class($this));
+        $this->db =  App::getInstance()->getDatabase();
     }
+
+    public function getCategories(){
+        return $this->db->query("SELECT * FROM categorie")->find(get_class($this));
+    }
+
+    public function getCategorieById(int $id){
+        return $this->db->query("SELECT * FROM categorie WHERE idCategorie = :id",['id'=>$id])->findOne(get_class($this));
+    }
+
+    public function removeCategorieById(int $id): Database
+    {
+        return $this->db->query("DELETE FROM categorie WHERE idCategorie = :id",['id'=>$id]);
+    }
+    
+
 
 
 }

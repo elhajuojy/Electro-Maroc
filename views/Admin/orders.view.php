@@ -7,7 +7,7 @@
 ); ?>
 
 <?= view('partials/adminNav.php') ?>
-<div class="lg:w-[85%] w-full  ml-auto container ">
+<div class="lg:w-[84%] w-full  ml-auto container ">
     <nav class=" px-6 pt-6">
         <header class="flex justify-between">
             <h1 class="text-3xl font-medium ">Orders </h1>
