@@ -114,10 +114,10 @@ CREATE TABLE cart (
     id int(11) NOT NULL AUTO_INCREMENT,
     idProduit int(11) NOT NULL,
     bought int(11) NOT NULL default 0,
-    idClient int(11) NOT NULL,
+    idUser int(11) NOT NULL,
     quantite int(11) NOT NULL,
     Foreign Key (idProduit) REFERENCES Produit(idProduit),
-    Foreign Key (idClient) REFERENCES Client(idClient),
+    Foreign Key (idUser) REFERENCES users(id),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -189,33 +189,40 @@ INSERT into sous_categorie (nom, description, image, idCategorie) VALUES
 ('sous categorie 5', 'description sous categorie 5', 'assets/category/sous/image5.jpg', 5);
 
 
-
+DROP TABLE commande;
 CREATE Table Commande (
     idCommande int(11) NOT NULL AUTO_INCREMENT,
     dateCommande date ,
     dateLivraison date ,
     dateDenvoi date ,
-    idClient int(11) NOT NULL,
+    iduser int(11) NOT NULL,
     PRIMARY KEY (idCommande),
-    Foreign Key (idClient) REFERENCES Client(idClient)
+    Foreign Key (iduser) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+-- add the status filed to commande table
+ALTER TABLE commande ADD status varchar(255) NOT NULL DEFAULT 'pending';
+--remove filed  idClient  and add filed
+ALTER TABLE commande DROP idClient;
 -- status filed 
 
 ALTER TABLE commande ADD status varchar(255) NOT NULL DEFAULT 'pending';
 
-SELECT `idClient` FROM client;
-INSERT INTO commande (dateCommande, dateLivraison, dateDenvoi, idClient) VALUES
+SELECT * FROM users;
+
+INSERT INTO commande (dateCommande, dateLivraison, dateDenvoi, iduser) VALUES
 ('2020-01-01', '2020-01-01', '2020-01-01', 7),
-('2020-01-01', '2020-01-01', '2020-01-01', 10),
+('2020-01-01', '2020-01-01', '2020-01-01', 12),
 ('2020-01-01', '2020-01-01', '2020-01-01', 9),
 ('2020-01-01', '2020-01-01', '2020-01-01', 8),
-('2020-01-01', '2020-01-01', '2020-01-01', 6);
+('2020-01-01', '2020-01-01', '2020-01-01', 12);
 
 
 
 SELECT * FROM commande;
+
+DROP table produit_commande;
 
 CREATE Table Produit_Commande (
     idProduit_Commande int(11) NOT NULL AUTO_INCREMENT,
@@ -227,21 +234,23 @@ CREATE Table Produit_Commande (
     Foreign Key (idCommande) REFERENCES Commande(idCommande)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+SELECT * FROM produit;
+SELECT * FROM commande;
 INSERT INTO produit_commande (idProduit, idCommande, quantite) VALUES
-(1, 6, 1),
-(2, 7, 2),
-(3, 8, 3),
-(4, 9, 4),
-(5, 10, 5),
-(1, 6, 3),
-(1, 7, 6),
-(2, 8, 9),
-(4, 9, 2),
-(5, 6, 9),
-(2, 7, 1),
-(3, 8, 3),
-(4, 9, 4),
-(5, 10, 5);
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4),
+(5, 5, 5),
+(1, 1, 3),
+(1, 2, 6),
+(2, 3, 9),
+(4, 4, 2),
+(5, 5, 9),
+(2, 1, 1),
+(3, 2, 3),
+(4, 3, 4),
+(5, 4, 5);
 
 --start creating queries 
 
