@@ -32,16 +32,19 @@ run the project
 **-t meaning the public folder is the root folder**
 
 ## Website preview
-<div style="display:felx; ;width:100%;margi:auto;">
-<img  src="https://user-images.githubusercontent.com/86893073/208320384-5ed68943-f84f-4afc-8528-883dac26c6c4.png" width="70%" /> 
-<img  src="https://user-images.githubusercontent.com/86893073/208320390-aeb89ebb-6c63-4d8d-b59f-46c673916b56.png" width="27%" /> 
-</div>
 
-![shopping cart2 ](https://user-images.githubusercontent.com/86893073/209227368-0d16b057-bc87-4f04-beed-d6c9aab2313a.png)
+![Screenshot (50)](https://user-images.githubusercontent.com/86893073/209857467-b2bed8f9-fd69-4016-978c-665a1636d5a1.png)
 
-![products](https://user-images.githubusercontent.com/86893073/209167413-8dedc035-b5bc-4531-8b32-0f7dcb687502.png)
+![Screenshot (51)](https://user-images.githubusercontent.com/86893073/209857473-4d3a41fb-0b8a-4043-aef9-2a9bc0b9ef31.png)
 
-![Productsii](https://user-images.githubusercontent.com/86893073/209227371-eeb3d5c9-ec11-4fa8-9e77-0152b7d8e293.png)
+![Screenshot (52)](https://user-images.githubusercontent.com/86893073/209857475-5fc39741-6e12-42d2-9888-bc244d0d2112.png)
+
+![Screenshot (53)](https://user-images.githubusercontent.com/86893073/209857477-16abff3f-3d14-489e-9483-4a11f5a5f4a0.png)
+
+![Screenshot (54)](https://user-images.githubusercontent.com/86893073/209857481-78ae8dd9-6b22-4434-8857-7566e2bec02b.png)
+
+![login](https://user-images.githubusercontent.com/86893073/209857671-3323b23d-563d-4327-b072-361c4dfb6edd.png)
+
 
 
 ## Admin Dashboard UI 
