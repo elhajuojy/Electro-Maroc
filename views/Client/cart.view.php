@@ -32,15 +32,16 @@
                         <div class="quantity">Quantity</div>
                         <div class="total">Total</div>
                     </div>
-                    <?= Widget("CartItem", [
-                        // 'cart' => $cart,
-                    ]) ?>
-                    <?= Widget("lineBreak") ?>
-                    <?= Widget("CartItem", [
-                        // 'cart' => $cart,
-                    ]) ?>
-                    <?= Widget("lineBreak") ?>
-                    <div class="action w-full flex justify-between">
+                    <?php 
+                        foreach($products as $product){
+                            echo Widget("CartItem", [
+                                'product' => $product
+                            ]);
+                            echo Widget("lineBreak") ;
+                            
+                        }
+                    ?>
+                    <div class="action w-full mt-5 flex justify-between">
                         <div class="div">
                         <button class="rounded-full text-gray-500 font-medium text-xs border-[3px] py-1 px-2">
                             <a href="/">Contunie Shopping</a>
@@ -55,7 +56,7 @@
                         
                     </div>
                 </div>
-                <div class="summary m-auto  bg-blue-100 p-6 max-w-md rounded shadow">
+                <div class="summary m-auto bg-blue-100 p-6 max-w-md rounded shadow">
                     <p class="mt-2 text-2xl font-medium text-gray-800">Summary</p>
                     <p class="mt-2 opacity-50">Estimate Shipping and Tax</p>
                     <p class="mt-2 text-sm opacity-40 w-[70%]">
@@ -82,18 +83,18 @@
                         <p class="text-xl font-medium">$13,047.00</p>
                     </div>
                     <div class="checkout-btn w-full mt-6 rounded m-auto">
-                        <button class="bg-blue-700 hover:bg-blue-700 text-white font-base w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
+                        <button onclick="sweetAlertWithCheck(<?=$_SESSION['id']?>)" class="bg-blue-700  ease-in duration-200 hover:bg-blue-800  text-white font-base w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
                             Proceed to Checkout
                         </button>
                     </div>
                     <div class="checkout-btn w-full mt-6 rounded m-auto">
-                        <button class="bg-yellow-500  hover:bg-orange-600   w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
+                        <button class="bg-yellow-500  ease-in duration-200 hover:bg-orange-600   w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
                             Check with PayPal
                             <i class="fa-brands fa-paypal"></i>
                         </button>
                     </div>
                     <div class="checkout-btn w-full mt-6 rounded m-auto">
-                        <button class="  border-2 border-sky-300 w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
+                        <button class=" ease-in duration-200  border-2 border-sky-300 w-full rounded-full py-2 px-4 focus:outline-none focus:shadow-outline" type="button">
                             Check Out with Multiple Addresses
                         </button>
                     </div>
@@ -109,4 +110,8 @@
         </div>
     </section>
 </section>
-<?php view('partials/footer.php'); ?>
+
+<?php view('partials/footer.php',[
+
+'scripts' => ' <script src="assets/js/confirmOrder.js"></script>'
+]); ?>
