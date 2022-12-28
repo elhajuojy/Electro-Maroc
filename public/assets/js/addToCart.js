@@ -12,18 +12,25 @@ function addToCart(id) {
         data: {
             idProduit :id,
             quantity:quantity,
+            addToCart:true
+
         },
         success: function(data, status) {
-            // $("#displayDataTable").html(data);
             console.log(data);
+            alertCart(data);
         }
     })
-    Swal.fire(
-        'Good job!',
-        'Added to your cart Successfully ',
-        'success'
-    );
+    
 
 }
 
+
+function alertCart(messg = "Added to your cart "){
+    
+    Swal.fire(
+        'Good job!',
+        `Successfully ${messg}` ,
+        'success'
+    );
+}
 
