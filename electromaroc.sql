@@ -1,9 +1,11 @@
--- Active: 1671439187445@@localhost@3306@electromaroc
+-- Active: 1675154731798@@127.0.0.1@3306@electromaroc
 
-DROP  DATABASE electromaroc;
+DROP DATABASE IF EXISTS electromaroc;
 CREATE DATABASE electromaroc;
 USE electromaroc;
-DROP Table users;
+
+drop table if exists users;
+
 CREATE TABLE users (
     id int(11) NOT NULL AUTO_INCREMENT,
     username varchar(255) NOT NULL,
@@ -27,7 +29,7 @@ INSERT INTO users (username,password,email,role)
 ('user4', 'user4', 'ayoube@gmail.com','client');  
 
 SELECT * FROM users;
-DROP TABLE client;
+DROP TABLE if exists client;
 
 CREATE Table Client (
     idClient int(11) NOT NULL AUTO_INCREMENT,
@@ -44,7 +46,7 @@ CREATE Table Client (
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DELETE from client;
+DELETE from  client;
 
 INSERT INTO Client (nom_complet, email, telephone, adresse, ville, codePostal, pays) 
 VALUES ('mehdi elhjujy', 'user@gmail.com','0666666666','rue 1','casablanca','20000','maroc'),
@@ -60,16 +62,16 @@ SELECT * FROM client;
 SELECT * FROM users WHERE role ='user';
 
 
-CREATE TABLE admins (
-    id int(11) NOT NULL AUTO_INCREMENT,
-    username varchar(255) NOT NULL,
-    password varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
-    role varchar(255) NOT NULL  default 'admin',
-    PRIMARY KEY (id),
-    UNIQUE KEY username (username),
-    UNIQUE KEY email (email),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- CREATE TABLE admins (
+--     id int(11) NOT NULL AUTO_INCREMENT,
+--     username varchar(255) NOT NULL,
+--     password varchar(255) NOT NULL,
+--     email varchar(255) NOT NULL,
+--     role varchar(255) NOT NULL  default 'admin',
+--     PRIMARY KEY (id),
+--     UNIQUE KEY username (username),
+--     UNIQUE KEY email (email),
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -87,10 +89,10 @@ CREATE Table Produit (
     PRIMARY KEY (idProduit)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-// add rating colum to the produit table 
+-- add rating colum to the produit table 
 
 
-ALTER TABLE Produit ADD rating int(11) NOT NULL default 0;
+-- ALTER TABLE Produit ADD rating int(11) NOT NULL default 0;
 
 -- add created_at and updated_at to the cart table
 ALTER TABLE produit ADD created_at timestamp NOT NULL default CURRENT_TIMESTAMP;
@@ -109,7 +111,7 @@ CREATE TABLE images (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE cart;
+DROP TABLE if EXISTS cart;
 CREATE TABLE cart ( 
     id int(11) NOT NULL AUTO_INCREMENT,
     idProduit int(11) NOT NULL,
@@ -121,11 +123,11 @@ CREATE TABLE cart (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (1, 1, 1, 0);
-INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (2, 1, 1, 0);
-INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (3, 1, 1, 0);
-INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (4, 1, 1, 0);
-INSERT INTO cart (idProduit, idClient, quantite, bought ) VALUES (5, 1, 1, 0);
+INSERT INTO cart (idProduit, idUser, quantite, bought ) VALUES (1, 1, 1, 0);
+INSERT INTO cart (idProduit, idUser, quantite, bought ) VALUES (2, 1, 1, 0);
+INSERT INTO cart (idProduit, idUser, quantite, bought ) VALUES (3, 1, 1, 0);
+INSERT INTO cart (idProduit, idUser, quantite, bought ) VALUES (4, 1, 1, 0);
+INSERT INTO cart (idProduit, idUser, quantite, bought ) VALUES (5, 1, 1, 0);
 
 
 
@@ -189,7 +191,7 @@ INSERT into sous_categorie (nom, description, image, idCategorie) VALUES
 ('sous categorie 5', 'description sous categorie 5', 'assets/category/sous/image5.jpg', 5);
 
 
-DROP TABLE commande;
+DROP TABLE if exists commande;
 CREATE Table Commande (
     idCommande int(11) NOT NULL AUTO_INCREMENT,
     dateCommande date ,
@@ -212,17 +214,17 @@ ALTER TABLE commande ADD status varchar(255) NOT NULL DEFAULT 'pending';
 SELECT * FROM users;
 
 INSERT INTO commande (dateCommande, dateLivraison, dateDenvoi, iduser) VALUES
-('2020-01-01', '2020-01-01', '2020-01-01', 7),
-('2020-01-01', '2020-01-01', '2020-01-01', 12),
-('2020-01-01', '2020-01-01', '2020-01-01', 9),
-('2020-01-01', '2020-01-01', '2020-01-01', 8),
-('2020-01-01', '2020-01-01', '2020-01-01', 12);
+('2020-01-01', '2020-01-01', '2020-01-01', 1),
+('2020-01-01', '2020-01-01', '2020-01-01', 2),
+('2020-01-01', '2020-01-01', '2020-01-01', 3),
+('2020-01-01', '2020-01-01', '2020-01-01', 4),
+('2020-01-01', '2020-01-01', '2020-01-01', 5);
 
 
 
 SELECT * FROM commande;
 
-DROP table produit_commande;
+DROP table if exists produit_commande;
 
 CREATE Table Produit_Commande (
     idProduit_Commande int(11) NOT NULL AUTO_INCREMENT,
@@ -237,20 +239,20 @@ CREATE Table Produit_Commande (
 SELECT * FROM produit;
 SELECT * FROM commande;
 INSERT INTO produit_commande (idProduit, idCommande, quantite) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(1, 1, 3),
-(1, 2, 6),
-(2, 3, 9),
-(4, 4, 2),
-(5, 5, 9),
-(2, 1, 1),
-(3, 2, 3),
-(4, 3, 4),
-(5, 4, 5);
+(1, 11, 1),
+(2, 12, 2),
+(3, 13, 3),
+(4, 14, 4),
+(5, 15, 5),
+(1, 11, 3),
+(1, 12, 6),
+(2, 13, 9),
+(4, 14, 2),
+(5, 15, 9),
+(2, 11, 1),
+(3, 12, 3),
+(4, 13, 4),
+(5, 14, 5);
 
 --start creating queries 
 
