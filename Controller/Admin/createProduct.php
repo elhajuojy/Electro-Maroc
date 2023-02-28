@@ -16,8 +16,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $image_dir = "";
     if (isset($_FILES['fileUpload']) ) {
         
-        $imagename =  imageUpload('fileUpload',$image_dir);
         $image_dir = "assets/images/products/";
+        $imagename =  imageUpload('fileUpload',$image_dir);
     }
     else{
         $imagename = post('image');
@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 'prix_offer' => $prix_offere,
                 'quantite' => $quntite,
                 'description' => $description,
-                'image' => $image_dir.$imagename,
+                'image' => $imagename,
                 'status' => $status,
                 'code_barre' => $code_barre,
             ]);
