@@ -13,7 +13,6 @@ function addToCart(id) {
             idProduit :id,
             quantity:quantity,
             addToCart:true
-
         },
         success: function(data, status) {
             console.log(data);
