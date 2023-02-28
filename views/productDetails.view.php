@@ -8,6 +8,11 @@
 
 <?php view('partials/banner.php'); ?>
 <?php view('partials/navbar.php'); ?>
+
+<?php 
+
+if (isLogedIn()) { ?>
+
 <nav class="Pannel flex items-center  mt-4 w-[90%] m-auto mb-6">
     <div class="titles flex w-full  justify-between items-center">
         <p class="lg:block hidden">
@@ -41,6 +46,9 @@
         </div>
     </div>
 </nav>
+
+<?php } ?>
+
 <!-- <?= Widget('lineBreak') ?> -->
 <hr>
 <main class=" w-full">
