@@ -50,6 +50,13 @@ class Commande extends Model {
         return $stmt;
     }
 
+    public function getAll(){
+        $db = App::getInstance()->getDatabase();
+        $sql = "Select * from commande ";
+        $stmt = $db->query($sql)->get();
+        return $stmt;
+    }
+
 
 
 

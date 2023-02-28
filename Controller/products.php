@@ -21,8 +21,9 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
     }
 
     if(get('nomCategory')){
+        
         $produit = $produit->getProductsByCategory(get('nomCategory'));
-
+        
         view('products.view.php', ['title' => 'Products','description' => 'Products','products' => $produit,'categories' => $Category]);
         die();
     }

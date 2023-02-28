@@ -87,76 +87,22 @@
                     <th class="p-2">Order Total</th>
                     <th class="p-2">Actions</th>
                 </thead>
-                <?= view('components/orderRow.php', [
-                    'id' => 4437,
-                    'customer' => 'Mohamed',
-                    'products' => 'Laptop Asus',
-                    'date' => '12 Aug 2021',
-                    'status' => 'Pending',
-                    'delivery' => 'PickUp',
-                    'total' => '1200 DH',
-                    'action' => 'View'
-                ]) ?>
-                <?= view('components/orderRow.php', [
-                    'id' => 8875,
-                    'customer' => 'Mehdi',
-                    'products' => 'Iphone 12',
-                    'date' => '22 Aug 2022',
-                    'status' => 'Booked',
-                    'delivery' => 'Delayed',
-                    'total' => '7745 DH',
-                    'action' => 'View'
-                ]) ?>
-                <?= view('components/orderRow.php', [
-                    'id' => 4458,
-                    'customer' => 'Mohamed',
-                    'products' => 'Laptop Asus',
-                    'date' => '12 Aug 2021',
-                    'status' => 'Closed',
-                    'delivery' => 'PickUp',
-                    'total' => '1200 DH',
-                    'action' => 'View'
-                ]) ?>
-                <?= view('components/orderRow.php', [
-                    'id' => 8875,
-                    'customer' => 'Mehdi',
-                    'products' => 'Iphone 12',
-                    'date' => '22 Aug 2022',
-                    'status' => 'Booked',
-                    'delivery' => 'Delayed',
-                    'total' => '7745 DH',
-                    'action' => 'View'
-                ]) ?>
-                <?= view('components/orderRow.php', [
-                    'id' => 4458,
-                    'customer' => 'Mohamed',
-                    'products' => 'Laptop Asus',
-                    'date' => '12 Aug 2021',
-                    'status' => 'Closed',
-                    'delivery' => 'PickUp',
-                    'total' => '1200 DH',
-                    'action' => 'View'
-                ]) ?>
-                <?= view('components/orderRow.php', [
-                    'id' => 8875,
-                    'customer' => 'Mehdi',
-                    'products' => 'Iphone 12',
-                    'date' => '22 Aug 2022',
-                    'status' => 'Booked',
-                    'delivery' => 'Delayed',
-                    'total' => '7745 DH',
-                    'action' => 'View'
-                ]) ?>
-                <?= view('components/orderRow.php', [
-                    'id' => 4458,
-                    'customer' => 'Mohamed',
-                    'products' => 'Laptop Asus',
-                    'date' => '12 Aug 2021',
-                    'status' => 'Closed',
-                    'delivery' => 'PickUp',
-                    'total' => '1200 DH',
-                    'action' => 'View'
-                ]) ?>
+                <?php 
+
+                foreach($orders as $order){
+                     view('components/orderRow.php', [
+                        'id' => $order[''],
+                        'customer' => 'Mohamed',
+                        'products' => 'Laptop Asus',
+                        'date' => $order['dateLivraison'],
+                        'status' => 'Pending',
+                        'delivery' => 'PickUp',
+                        'total' => '1200 DH',
+                        'action' => 'View'
+                     ]);
+                }
+                ?>
+                
             </table>
         </main>
     </section>
