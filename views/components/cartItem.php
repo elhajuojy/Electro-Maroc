@@ -19,7 +19,7 @@ $newQuntity = $cart->quantite;
                         <div class="quantity-input border-2 p-2">
                             <!-- <button class="minus">-</button> -->
                             <input type="number" id="quntity_pr" class="quantity w-10 font-bold" value=<?= $newQuntity ?>
-                            onchange="document.getElementById('endQuntity').value = this.value"
+                            onchange="document.getElementById('endQuntity_<?=$product->idProduit?>').value = this.value"
                             "
                             />
                             <button class="plus">+</button>
@@ -39,7 +39,7 @@ $newQuntity = $cart->quantite;
                         <form action="" method="POST">
                             <input type="hidden" name="updateCart" value="updateCart">
                             <input type="hidden" name="idProduit" value="<?=$product->idProduit?>">
-                            <input type="hidden" name="quantite" value="<?=$newQuntity?>" id="endQuntity"
+                            <input type="hidden" name="quantite" value="<?=$newQuntity?>" id="endQuntity_<?=$product->idProduit?>"
                             >
                             
                         <button class="delete-btn border-2 p-2  hover:bg-slate-100 hover:shadow       rounded-full">

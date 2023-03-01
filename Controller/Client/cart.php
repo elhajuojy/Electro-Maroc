@@ -10,6 +10,7 @@ use Model\Produit;
 $products = [];
 
 $cart = new Cart();
+$totalOrder = 0;
 $cart = $cart->findByFileds(['idUser' => $_SESSION['id']], 'bought', 0);
 foreach($cart as $c){
     $product = new Produit();
@@ -18,6 +19,9 @@ foreach($cart as $c){
 }
 
 
+for($i = 0; $i < count($products); $i++){
+    $totalOrder += $products[$i][0]->prix_final * $cart[$i]->quantite;
+}
 
 
 
@@ -82,7 +86,8 @@ view('Client/cart.view.php', [
         'title' => 'Client Eelectro Maroc',
     'description' => 'This is the Client ',
     'products'=>$products,
-    'cart' => $cart
+    'cart' => $cart,
+    'totalOrder' => $totalOrder
     ]);
     die();
 
