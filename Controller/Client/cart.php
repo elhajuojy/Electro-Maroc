@@ -19,25 +19,25 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
     foreach($cart as $c){
         if($c->bought == 1){
-            
             continue;
         }
         // $counter++;
         $product = new Produit();
         $product = $product->findByField('idProduit', $c->idProduit);
+
+
         // $product->quantity = $c->quantite;
         $products[] = $product;
     }
     // echo $counter;
+
+
 
     view('Client/cart.view.php', [
         'title' => 'Client Eelectro Maroc',
     'description' => 'This is the Client ',
     'products'=>$products
     ]);
-
-    die();
-    dd($products);
 
 
 
@@ -46,7 +46,6 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    echo "post";
 
     if(isset($_POST['addToCart'])){
 
@@ -82,7 +81,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         echo $messg;
         die();
     }
+
     
+    if(isset($_POST['removeFromCart'])){
+        //todo remove product from cart
+        $cart = new Cart();
+        $cart->deleteFromCart($_SESSION['id'], $_POST['idProduit']);
+        // redirct meto cart page;
+        goToPage('/cart');
+    }
     
     
 }

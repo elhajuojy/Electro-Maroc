@@ -33,6 +33,7 @@
                         <div class="total">Total</div>
                     </div>
                     <?php 
+            
                         foreach($products as $product){
                             echo Widget("CartItem", [
                                 'product' => $product
