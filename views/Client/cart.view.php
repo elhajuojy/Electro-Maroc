@@ -33,13 +33,16 @@
                         <div class="total">Total</div>
                     </div>
                     <?php 
-                        foreach($products as $product){
+
+                        for($i = 0; $i < count($products); $i++){
                             echo Widget("CartItem", [
-                                'product' => $product
+                                'product' => $products[$i],
+                                'cart' => $cart[$i]
                             ]);
                             echo Widget("lineBreak") ;
                             
                         }
+                        
                     ?>
                     <div class="action w-full mt-5 flex justify-between">
                         <div class="div">

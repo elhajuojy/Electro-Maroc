@@ -3,6 +3,7 @@
 function addToCart(id) {
 
     const quantity = document.querySelector('.quantity').value;
+    console.log(quantity);
     // console.log(id);
     const url = 'http://localhost:8000/cart';
     //todo: send id to cart and add it the client cart and quntite 

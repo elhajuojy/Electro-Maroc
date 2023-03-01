@@ -58,4 +58,15 @@ class Cart extends Model{
         ];
         return $db->query($sql,$params);
     }
+
+    public function deleteFromCart(int $id, int $idProduit): Database
+    {
+        $db = App::getInstance()->getDatabase();
+        $sql = "DELETE FROM ".$this->table." WHERE idUser = :idUser AND idProduit = :idProduit";
+        $params = [
+            'idUser' => $id,
+            'idProduit' => $idProduit
+        ];
+        return $db->query($sql,$params);
+    }
 }
