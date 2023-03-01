@@ -1,6 +1,7 @@
 <!-- product item  -->
 <?php 
 $product = $product[0];
+$newQuntity = $cart->quantite;
 ?>
 <div id="<?=$product->idProduit?>" class="cart-item flex justify-between items-center">
                     <div class="cart-item-img">
@@ -17,7 +18,10 @@ $product = $product[0];
                     <div class="cart-item-quantity w-20">
                         <div class="quantity-input border-2 p-2">
                             <!-- <button class="minus">-</button> -->
-                            <input type="number" class="quantity w-10 font-bold" value=<?= $cart->quantite ?> />
+                            <input type="number" id="quntity_pr" class="quantity w-10 font-bold" value=<?= $newQuntity ?>
+                            onchange="document.getElementById('endQuntity_<?=$product->idProduit?>').value = this.value"
+                            "
+                            />
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -33,6 +37,11 @@ $product = $product[0];
                         </button>
                         </form>
                         <form action="" method="POST">
+                            <input type="hidden" name="updateCart" value="updateCart">
+                            <input type="hidden" name="idProduit" value="<?=$product->idProduit?>">
+                            <input type="hidden" name="quantite" value="<?=$newQuntity?>" id="endQuntity_<?=$product->idProduit?>"
+                            >
+                            
                         <button class="delete-btn border-2 p-2  hover:bg-slate-100 hover:shadow       rounded-full">
                             <i class="fa-light fa-pen"></i>
                         </button>
