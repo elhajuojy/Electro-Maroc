@@ -17,7 +17,7 @@ $product = $product[0];
                     <div class="cart-item-quantity w-20">
                         <div class="quantity-input border-2 p-2">
                             <!-- <button class="minus">-</button> -->
-                            <input type="number" class="quantity w-10 font-bold" value="1" />
+                            <input type="number" class="quantity w-10 font-bold" value=<?= $cart->quantite ?> />
                             <button class="plus">+</button>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ $product = $product[0];
                             <i class="fa-duotone fa-xmark"></i>
                         </button>
                         </form>
-                        <form action="">
+                        <form action="" method="POST">
                         <button class="delete-btn border-2 p-2  hover:bg-slate-100 hover:shadow       rounded-full">
                             <i class="fa-light fa-pen"></i>
                         </button>

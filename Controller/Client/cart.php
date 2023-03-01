@@ -13,31 +13,33 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
 
     $cart = new Cart();
-    $cart = $cart->findByFileds(['idUser' => $_SESSION['id']]);
+    $cart = $cart->findByFileds(['idUser' => $_SESSION['id']], 'bought', 0);
     // dd($cart);
     $products = [];
 
     foreach($cart as $c){
-        if($c->bought == 1){
-            continue;
-        }
+       
         // $counter++;
         $product = new Produit();
         $product = $product->findByField('idProduit', $c->idProduit);
 
 
         // $product->quantity = $c->quantite;
+
         $products[] = $product;
+
     }
     // echo $counter;
-
+    
 
 
     view('Client/cart.view.php', [
         'title' => 'Client Eelectro Maroc',
     'description' => 'This is the Client ',
-    'products'=>$products
+    'products'=>$products,
+    'cart' => $cart
     ]);
+    die();
 
 
 
@@ -89,6 +91,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $cart->deleteFromCart($_SESSION['id'], $_POST['idProduit']);
         // redirct meto cart page;
         goToPage('/cart');
+        die();
     }
     
     
