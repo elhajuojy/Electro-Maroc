@@ -7,55 +7,23 @@ if(!isLogedIn()){
 use Model\Cart;
 use Model\Produit;
 
-if($_SERVER['REQUEST_METHOD'] === 'GET'){
-    //todo get all products in cart for this user
-    // check if he click on confirm order
+$products = [];
 
-
-    $cart = new Cart();
-    $cart = $cart->findByFileds(['idUser' => $_SESSION['id']], 'bought', 0);
-    // dd($cart);
-    $products = [];
-
-    foreach($cart as $c){
-       
-        // $counter++;
-        $product = new Produit();
-        $product = $product->findByField('idProduit', $c->idProduit);
-
-
-        // $product->quantity = $c->quantite;
-
-        $products[] = $product;
-
-    }
-    // echo $counter;
-    
-
-
-    view('Client/cart.view.php', [
-        'title' => 'Client Eelectro Maroc',
-    'description' => 'This is the Client ',
-    'products'=>$products,
-    'cart' => $cart
-    ]);
-    die();
-
-
-
+$cart = new Cart();
+$cart = $cart->findByFileds(['idUser' => $_SESSION['id']], 'bought', 0);
+foreach($cart as $c){
+    $product = new Produit();
+    $product = $product->findByField('idProduit', $c->idProduit);
+    $products[] = $product;
 }
+
+
 
 
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if(isset($_POST['addToCart'])){
-
-        
-        //todo check if product already in cart        
-        //todo update quantity if product already in cart
-        //todo create new cart if product not in cart
-        //todo update bought to 0 if product not in cart
 
         $cart = new Cart();
         $idUser = $_SESSION['id'];
@@ -93,12 +61,31 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         goToPage('/cart');
         die();
     }
+
+    if(isset($_POST['updateCart'])){
+        //todo update product from cart
+        $cart = new Cart();
+        $cart->updateCart($_SESSION['id'], $_POST['idProduit'], intval($_POST['quantite']));
+        // redirct meto cart page;
+        goToPage('/cart');
+        die();
+    }
     
     
 }
 
 
-view('Client/cart.view.php', ['title' => 'Client Eelectro Maroc','description' => 'This is the Client ']);
-?>
+
+
+
+view('Client/cart.view.php', [
+        'title' => 'Client Eelectro Maroc',
+    'description' => 'This is the Client ',
+    'products'=>$products,
+    'cart' => $cart
+    ]);
+    die();
+
+
 
 
