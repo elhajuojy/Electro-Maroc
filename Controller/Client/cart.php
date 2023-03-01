@@ -11,7 +11,8 @@ $products = [];
 
 $cart = new Cart();
 $totalOrder = 0;
-$cart = $cart->findByFileds(['idUser' => $_SESSION['id']], 'bought', 0);
+$cart = $cart->findByFileds(['idUser' => $_SESSION['id'], 'bought' => '0']);
+
 foreach($cart as $c){
     $product = new Produit();
     $product = $product->findByField('idProduit', $c->idProduit);
