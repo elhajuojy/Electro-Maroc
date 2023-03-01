@@ -34,6 +34,14 @@ class Categorie
         return $this->db->query("DELETE FROM categorie WHERE idCategorie = :id",['id'=>$id]);
     }
     
+    public function insert(array $data): Database
+    {
+        return $this->db->query("INSERT INTO categorie (nom, description) VALUES (:nom, :description)", $data);
+    }
+    public function updateCategorieById(int $id, string $nom, string $description): Database
+    {
+        return $this->db->query("UPDATE categorie SET nom = :nom, description = :description WHERE idCategorie = :id", ['id' => $id, 'nom' => $nom, 'description' => $description]);
+    }
 
 
 

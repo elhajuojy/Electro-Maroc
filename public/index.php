@@ -44,6 +44,7 @@ $App->setRoutes([
     '/uploadImage'=>'Controller/uploadImage.php',
     '/order'=> 'Controller/order.php',
     '/admin-orders' => 'Controller/Admin/orders.php',
+    '/admin-cateogry' => 'Controller/Admin/category.php',
     // "/admin/create"=>'Controller/Admin/products.php',  
 ],BASE_PATH);
 
