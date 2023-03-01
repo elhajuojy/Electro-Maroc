@@ -32,6 +32,15 @@
                 <img src="assets/images/icons/users.svg" alt="">
                 <p>Users</p>
             </a>
+
+            <a href="/admin-cateogry" class="flex gap-4 items-center 
+            <?php echo (urlIs('/admin-cateogry'))?' border p-2 rounded border-gray-300':'' ?>
+            hover:text-gray-300">
+                <img src="assets/images/icons/users.svg" alt="">
+                <p> 
+                    Cateogry 
+                </p>
+            </a>
             <a href="#" class="flex gap-4 
             <?php echo (urlIs('/admin-settings'))?' border p-2 rounded border-gray-300':'' ?>
             items-center">
@@ -39,7 +48,7 @@
                 <p>Settings</p>
             </a>
         </div>
-        <div class="divider m-auto h-80 top-0">
+        <div class="divider m-auto  top-0">
         </div>
         <div class="logout grid items-center h-6">
             <a href="/logout" class="flex gap-5 items-center text-white px-6  hover:text-gray-300">
