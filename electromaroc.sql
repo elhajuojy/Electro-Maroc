@@ -46,6 +46,10 @@ CREATE Table Client (
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
+
+
 DELETE from  client;
 
 INSERT INTO Client (nom_complet, email, telephone, adresse, ville, codePostal, pays) 
@@ -201,6 +205,30 @@ CREATE Table Commande (
     PRIMARY KEY (idCommande),
     Foreign Key (iduser) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE commande_info (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    nom_complet varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    telephone varchar(255) NOT NULL,
+    adresse varchar(255) NOT NULL,
+    ville varchar(255) NOT NULL,
+    codePostal varchar(255) NOT NULL,
+    pays varchar(255) NOT NULL,
+    commande_id INT NOT NULL,
+    PRIMARY KEY (id),
+    Foreign key (commande_id) REFERENCES Commande(idCommande)
+) ;
+
+
+
+INSERT INTO commande_info (nom_complet, email, telephone, adresse, ville, codePostal, pays, commande_id) VALUES
+('nom complet 1', 'elhjuojy','123456789', 'adresse 1', 'ville 1', 'code postal 1', 'pays 1', 11),
+('nom complet 2', 'elhjuojy','123456789', 'adresse 2', 'ville 2', 'code postal 2', 'pays 2', 12),
+('nom complet 3', 'elhjuojy','123456789', 'adresse 3', 'ville 3', 'code postal 3', 'pays 3', 13),
+('nom complet 4', 'elhjuojy','123456789', 'adresse 4', 'ville 4', 'code postal 4', 'pays 4', 14),
+('nom complet 5', 'elhjuojy','123456789', 'adresse 5', 'ville 5', 'code postal 5', 'pays 5', 15);
 
 
 -- add the status filed to commande table
