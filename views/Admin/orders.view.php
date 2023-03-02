@@ -79,26 +79,22 @@
             <table class="w-full mt-4 rounded-sm text-center ">
                 <thead class="text-gray-700 font-medium bg-gray-100 rounded">
                     <th class="p-2 hidden md:block">Order ID</th>
-                    <th class="p-2">Customer</th>
-                    <th class="p-2 hidden md:block">Products</th>
-                    <th class="p-2">Order Date</th>
+                    <th class="p-2">Order Date  </th>
+                    <th class="p-2 hidden md:block">Phone</th>
+                    <th class="p-2">Order Delivery  </th>
                     <th class="p-2">Order Status</th>
-                    <th class="p-2">Delvery status </th>
-                    <th class="p-2">Order Total</th>
                     <th class="p-2">Actions</th>
                 </thead>
                 <?php 
 
-                foreach($orders as $order){
+                foreach($orders_info as $order){
                      view('components/orderRow.php', [
-                        'id' => $order[''],
-                        'customer' => 'Mohamed',
-                        'products' => 'Laptop Asus',
+                        'id' => $order['ville'],
+                        'customer' => $order['dateCommande'],
+                        'products' => $order['telephone'],
                         'date' => $order['dateLivraison'],
-                        'status' => 'Pending',
-                        'delivery' => 'PickUp',
-                        'total' => '1200 DH',
-                        'action' => 'View'
+                        'status' => $order['status'],
+                        'action' => $order['idCommande']
                      ]);
                 }
                 ?>
