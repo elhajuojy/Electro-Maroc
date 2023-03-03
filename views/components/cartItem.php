@@ -5,7 +5,7 @@ $newQuntity = $cart->quantite;
 ?>
 <div id="<?=$product->idProduit?>" class="cart-item flex justify-between items-center">
                     <div class="cart-item-img">
-                        <img src="<?=$product->image?>" alt="">
+                        <img class="w-20 h-20" src="<?=$product->image?>" alt="">
                     </div>
                     <div class="cart-item-title hidden md:block w-56">
                         <p class="text-sm">
@@ -16,13 +16,12 @@ $newQuntity = $cart->quantite;
                         <p>$ <?= $product->prix_final ?> </p>
                     </div>
                     <div class="cart-item-quantity w-20">
-                        <div class="quantity-input border-2 p-2">
+                        <div class="quantity-input  flex ">
                             <!-- <button class="minus">-</button> -->
-                            <input type="number" id="quntity_pr" class="quantity w-10 font-bold" value=<?= $newQuntity ?>
+                            <input type="number" id="quntity_pr" class="quantity border-gray-200 rounded w-full font-bold" value=<?= $newQuntity ?>
                             onchange="document.getElementById('endQuntity_<?=$product->idProduit?>').value = this.value"
                             "
                             />
-                            <button class="plus">+</button>
                         </div>
                     </div>
                     <div class="cart-item-total pl-6">

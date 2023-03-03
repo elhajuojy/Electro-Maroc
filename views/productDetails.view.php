@@ -26,10 +26,9 @@ if (isLogedIn()) { ?>
             </p>
             
             <div class="cart-item-quantity w-20">
-                <div class="quantity-input border-2 rounded p-1">
+                <div class="quantity-input  p-1">
                     <!-- <button class="minus">-</button> -->
-                    <input type="number" min="0" max="<?=$product[0]->quantite  ?>" class="quantity w-10 font-bold" value="1" />
-                    <button class="plus">+</button>
+                    <input type="number" min="0" max="<?=$product[0]->quantite  ?>" class="quantity w-full font-bold rounded border-gray-300" value="1" />
                 </div>
             </div>
             <div class="checkout-btn w-80 rounded m-auto">
