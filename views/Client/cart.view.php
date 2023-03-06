@@ -145,6 +145,9 @@
                             <label for="zip" class="block mb-2 text-sm font-medium text-gray-900 ">Your zip</label>
                             <input type="text" name="zip" id="zip" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder=" zip" required>
                         </div>
+                        <div>
+                            <input id="user_id_confirm" type="hidden" name="user_id" value="<?=$_SESSION['id']?>">
+                        </div>
                         <button  
                         type="submit"
 
