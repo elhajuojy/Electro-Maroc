@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $imagename = post('image');
     }
 
-
+   
 
 
     if($imagename == "error" || $imagename == "fail"){
@@ -76,6 +76,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 'status' => $status,
                 'code_barre' => $code_barre,
             ]);
+
+            $last_id = $product->getLastInsertId()->get()[0]["id"];
+            
+            $cateogry_id = $_POST['Categories'];
+
+            
+            $product->insertProductCategorie(
+                $last_id,
+                $cateogry_id,
+            );
 
         }
         

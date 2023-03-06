@@ -7,9 +7,7 @@
 ); ?>
 
 
-
-<?= view('partials/adminNav.php') ?>
-<main class="container  lg:w-[84%] w-full ml-auto">
+<main class="container m-auto">
     <section >
         <div class="commande-info bg-gray-100 rounded-md p-4">
             <h1 class="text-xl font-semibold mb-2">Commande info</h1>

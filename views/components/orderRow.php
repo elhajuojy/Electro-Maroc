@@ -9,6 +9,6 @@
         </p>
     </td>    
     <td class="py-6 ">
-        <a href="/admin-order-info?id=<?= $action ?>" class="text-blue-500">View </a>
+        <a href="/order-info?id=<?= $action ?>" class="text-blue-500">View </a>
     </td>
 </tr>

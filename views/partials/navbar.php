@@ -43,7 +43,9 @@
                     ?>
                 <div id="menu-profile" class="z-40 absolute ease-in duration-100 hidden w-28  p-4  menu-profile rounded right-20 my-2  shadow border-rose-200 bg-color-1 text-green-900 font-semibold">
                     <ul class="flex flex-col gap-4">
-                        <li><?= $_SESSION['client']??'username' ?></li>
+                        <li>
+                            <a href="/profile">Profile</a>
+                        </li>
                         <?php echo isset($_SESSION['client']) ? '<li><a href="/logout">Logout</a></li>' : '<li><a href="/login">login</a></li>' ?>
                         <?php 
                             echo isAdmin()? '<li><a href="/admin">Dashboard</a></li>':'<li><a href="/profile">Profile</a></li>'

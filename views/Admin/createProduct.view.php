@@ -129,7 +129,7 @@
                 <label for="Categories">Categories</label>
                 <select name="Categories" id="Categories" class="w-full border-2 border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
                     <?php foreach ($categories as $categorie) : ?>
-                        <option value="<?= $categorie->id ?>"><?= $categorie->nom ?></option>
+                        <option value="<?= $categorie->idCategorie ?>"><?= $categorie->nom ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
