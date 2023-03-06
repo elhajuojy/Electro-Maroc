@@ -45,7 +45,8 @@ $App->setRoutes([
     '/order'=> 'Controller/order.php',
     '/admin-orders' => 'Controller/Admin/orders.php',
     '/admin-cateogry' => 'Controller/Admin/category.php',
-    "/admin-order-info"=>'Controller/Admin/orderInfo.php',  
+    "/order-info"=>'Controller/Admin/orderInfo.php',
+    "/profile"=>'Controller/Client/profile.php',
 ],BASE_PATH);
 
 

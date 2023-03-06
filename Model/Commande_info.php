@@ -65,6 +65,14 @@ class commande_info extends Model {
             $stmt = $db->query($sql)->get();
             return $stmt;
         }
+        public function getUserCommandAndInfo(int $id){
+            $db = $this->db;
+            $sql = "SELECT * FROM commande_info inner join commande on commande_info.commande_id = commande.idCommande where commande.iduser = :id";
+            $stmt = $db->query($sql,[
+                ':id' => $id
+            ])->get();
+            return $stmt;
+        }
 
         public function getCommandeInfoAndCommandeProduct(){
             $db = $this->db;
