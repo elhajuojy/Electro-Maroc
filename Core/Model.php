@@ -74,6 +74,23 @@ abstract class  Model {
         return $this->db->query($sql,$params);
     }
 
+    public function getLastInsertId(){
+        $sql = "SELECT LAST_INSERT_ID() as id";
+        return $this->db->query($sql);
+    }
+
+
+    public function insertProductCategorie($idProduit , $idCategorie){
+        $sql = "INSERT INTO produit_sous_categorie (idProduit, idSous_Categorie) VALUES (:produit_id, :categorie_id)";
+        $params = [
+            ':produit_id' => $idProduit,
+            ':categorie_id' => $idCategorie
+        ];
+        
+        return $this->db->query($sql,$params);
+    }
+
+
     public function update(int $id, array $data)
     {
 
