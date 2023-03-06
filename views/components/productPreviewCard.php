@@ -1,7 +1,5 @@
 <div id="<?=$id?>" class="product text-gray-600 flex items-center justify-between">
-    <div class="flex items-center ">
-        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-    </div>
+
     <div class="product-img  flex items-center gap-4 min-w-[200px]">
         <img src="<?= $image ?>" class=". w-28 mr-6" alt="">
         <div class=" font-medium content w-[200px]">
