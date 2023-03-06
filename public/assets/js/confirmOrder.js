@@ -1,10 +1,15 @@
-function confirmOrder(idUser){
+function confirmOrder(idUser,infoForm){
+
+    console.log(idUser);
+    console.log(infoForm);
+
     $.ajax({
         url: '/order',
         type: 'post',
         data: {
             idUser :idUser,
-            confirmOrder:true
+            Form : JSON.stringify(Object.fromEntries(infoForm)),
+            confirmOrder:true,
         },
         success: function(data, status) {
             data = JSON.parse(data);
@@ -13,11 +18,12 @@ function confirmOrder(idUser){
                // reload page
                 setTimeout(() => {
                 location.replace(location.href.split('#')[0]);
-              }, 2000);
+                }, 2000);
             }
         }
     })
 }
+
 
 // function sweet aleart 
 function sweetAlert(data){
@@ -30,7 +36,22 @@ function sweetAlert(data){
     );
 }
 
-function sweetAlertWithCheck(id){
+
+const form = document.querySelector('#order-information-form');
+
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const myFormData = new FormData(e.target);
+    console.log(myFormData);
+    const user_id  = document.querySelector('#user_id_confirm').value;
+    sweetAlertWithCheck(user_id,myFormData);
+    
+});
+
+
+function sweetAlertWithCheck(id,infoForm){
     Swal.fire({
         title: 'Are you sure?',
         text: "Do You Want To Confirm Your Order ?",
@@ -41,7 +62,7 @@ function sweetAlertWithCheck(id){
         confirmButtonText: 'Yes, Confirm it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            confirmOrder(id);
+            confirmOrder(id,infoForm);
         }
     })
 }

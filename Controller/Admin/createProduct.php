@@ -2,7 +2,7 @@
 
 use Core\Validator;
 use Model\Produit;
-
+use Model\Categorie;
 if(!isAdmin()){
     goToPage('/login');
 }
@@ -88,14 +88,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 }
 
+$categories = (new Categorie())->getCategories();
+
+
 if(get('id')){
     $product = $product->findByField('idProduit',get('id'));
-    view('admin/createProduct.view.php', ['title' => 'Product','description' => 'Product','product' => $product]);
+    view('admin/createProduct.view.php', ['title' => 'Product','description' => 'Product','product' => $product
+    ,'categories' => $categories
+]);
     die();
 }
 
 $emptyProduct = new Produit();
 $product = $emptyProduct->getEmptyProduct();
+
+
 
 $product = [
     $product
@@ -105,7 +112,8 @@ view('admin/createProduct.view.php',
 [
 'title' => 'Admin Eelectro Maroc',
 'description' => 'This is the Admin Dashboard' ,
-'product' => $product
+'product' => $product,
+'categories' => $categories
 
 
 ]); ?>

@@ -5,6 +5,7 @@
 
 use Model\Cart;
 use Model\Commande;
+use Model\commande_info;
 use Model\Produit;
 use Model\Produit_Commande;
 
@@ -15,6 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = [];
     if (isset($_POST['confirmOrder'])) {
         $idUser = $_SESSION['id'];
+        $orderInfo = $_POST['Form'];
+        $orderInfo  = json_decode($orderInfo);
+        // dd($orderInfo);
+
 
         //todo : get all products in cart for this user
         //todo : get all products in cart for this user and is not bought
@@ -47,6 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $commande = new Commande();
         $commande = $commande->getThisCommandeId($idUser);
         $idCommande = $commande[count($commande)-1]['idCommande'];
+
+        $commande_info = new commande_info();
+        $commande_info->insertCommandeInfo([
+            'commande_id' => $idCommande,
+            'nom_complet' => $orderInfo->nom_complete,
+            'email' => $orderInfo->email,
+            'telephone' => $orderInfo->phone,
+            'adresse' => $orderInfo->address,
+            'ville' => $orderInfo->city,
+            'codePostal' => $orderInfo->zip,
+            'pays' => $orderInfo->country,
+        ]);
+
+
 
         //todo : join cart with product to get price
         foreach ($cart as $c) {

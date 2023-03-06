@@ -125,7 +125,15 @@
                 <label for="product-name" class="text-gray-700">Description</label>
                 <textarea name="description" id="product-name" class="w-full resize-none border-2 border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent" rows="5"><?=$product[0]->description ?? ''?></textarea>
             </div>
-            <div class="categories">
+            <div>
+                <label for="Categories">Categories</label>
+                <select name="Categories" id="Categories" class="w-full border-2 border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+                    <?php foreach ($categories as $categorie) : ?>
+                        <option value="<?= $categorie->id ?>"><?= $categorie->nom ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <!-- <div class="categories">
                 <label for="product-name" class="text-gray-700">Categories</label>
                 <div class="categories-list flex gap-2 border-2 my-2 p-3 rounded ">
                     <div class="category flex gap-2 items-center justify-center border-2 border-gray-300 rounded px-2 py-1">
@@ -146,7 +154,7 @@
                     <span class="text-white pr-2"><i class="fa-solid fa-plus"></i></span>
                     <p class="text-white">Add category</p>
                 </button>
-            </div>
+            </div> -->
             <div class="flex w-full m-auto gap-10 py-5">
                 <div class="product-name">
                     <label for="product-name" class="text-gray-700">Prix offere</label>
