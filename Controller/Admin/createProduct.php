@@ -21,6 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     else{
         $imagename = post('image');
+        
     }
 
    
@@ -57,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 'prix_offer' => $prix_offere,
                 'quantite' => $quntite,
                 'description' => $description,
-                'image' => $imagename,
+                'image' => $image_dir.$imagename,
                 'status' => $status,
                 'code_barre' => $code_barre,
             ]);

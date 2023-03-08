@@ -43,6 +43,17 @@ class Commande extends Model {
         return $stmt;
     }
 
+    public function updateCommandeStatus($id,$status){
+        $db = App::getInstance()->getDatabase();
+        $newStatus = $status =="pending"?"en cours":"pending";
+        $sql = "UPDATE COMMANDE SET status = 'pending' WHERE idCommande = :id";
+        $stmt = $db->query($sql,[
+            ':id'=>$id,
+            //':newStatus'=>$newStatus
+        ]);
+
+    }
+
     public function getInvoices() {
         $db = App::getInstance()->getDatabase();
         $sql = "SELECT * FROM commande inner join users on commande.iduser = users.id inner join client on users.email = client.email";

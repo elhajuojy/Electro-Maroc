@@ -89,7 +89,9 @@
 
                 foreach($orders_info as $order){
                      view('components/orderRow.php', [
-                        'id' => $order['ville'],
+                        'name'=>$order['ville'],
+                        'id' => $order['id'],
+                        'commande_id'=>$order['commande_id'],
                         'customer' => $order['dateCommande'],
                         'products' => $order['telephone'],
                         'date' => $order['dateLivraison'],

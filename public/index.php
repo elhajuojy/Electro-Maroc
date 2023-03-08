@@ -47,6 +47,7 @@ $App->setRoutes([
     '/admin-cateogry' => 'Controller/Admin/category.php',
     "/order-info"=>'Controller/Admin/orderInfo.php',
     "/profile"=>'Controller/Client/profile.php',
+    "/changeOrderStatus"=>'Controller/Admin/changeOrderStatus.php',
 ],BASE_PATH);
 
 

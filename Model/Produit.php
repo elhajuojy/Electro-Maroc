@@ -98,6 +98,8 @@ class Produit extends Model{
         $this->query($sql,$data);
     }
 
+    
+
 
     public function getProductsByCategory($nom){
         $sql = "SELECT produit.*,categorie.nom As 'categorieNom'  FROM produit INNER JOIN produit_sous_categorie ON produit.idProduit = produit_sous_categorie.idProduit

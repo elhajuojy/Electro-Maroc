@@ -25,7 +25,7 @@ $newQuntity = $cart->quantite;
                         </div>
                     </div>
                     <div class="cart-item-total pl-6">
-                        <p >$ <?= $product->prix_final ?></p>
+                        <p >$ <?= $product->prix_final*$newQuntity ?></p>
                     </div>
                     <div class="cart-item-delete grid grid-cols-1 gap-2 my-auto ">
                         <form action="" method="POST" class="">
